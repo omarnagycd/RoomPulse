@@ -1,0 +1,382 @@
+[
+  {
+    "id": 1,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه أكلة تقدر تاكلها كل يوم من غير زهق؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 2,
+    "category": "كسرة جليد سريعة",
+    "question": "آخر صورة على موبايلك، إيه حكايتها؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 3,
+    "category": "كسرة جليد سريعة",
+    "question": "شاي ولا قهوة؟ ومحدش يزعل",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 4,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه أول حاجة بتعملها أول ما تصحى؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 5,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه اسم فيلم ممكن تتفرج عليه ١٠ مرات؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 6,
+    "category": "كسرة جليد سريعة",
+    "question": "آخر أغنية سمعتها وعجبتك؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 7,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه أغرب حاجة في شنطتك دلوقتي؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 8,
+    "category": "كسرة جليد سريعة",
+    "question": "لو يومك ٢٥ ساعة، الساعة الزيادة تعمل فيها إيه؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 9,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه اسم أول موبايل كان عندك؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 10,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه أطرف كلمة مصرية بتحب تقولها؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 11,
+    "category": "لو كنت...",
+    "question": "لو كنت شخصية كرتون، تكون مين؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 12,
+    "category": "لو كنت...",
+    "question": "لو تقدر تسافر أي حتة بكرة، تروح فين؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 13,
+    "category": "لو كنت...",
+    "question": "لو عندك قوة خارقة واحدة، تختار إيه؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 14,
+    "category": "لو كنت...",
+    "question": "لو حياتك فيلم، مين يمثل دورك؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 15,
+    "category": "لو كنت...",
+    "question": "لو تقدر تقابل أي حد في العالم، مين؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 16,
+    "category": "لو كنت...",
+    "question": "لو تشتغل أي شغلانة تانية خالص، تكون إيه؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 17,
+    "category": "لو كنت...",
+    "question": "لو فلوسك مش هتخلص أبداً، أول حاجة تشتريها؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 18,
+    "category": "لو كنت...",
+    "question": "لو ترجع بالزمن ١٠ سنين، هتقول لنفسك إيه؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 19,
+    "category": "لو كنت...",
+    "question": "لو تعيش في أي عصر تاني، تختار أنهي؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 20,
+    "category": "لو كنت...",
+    "question": "لو اسمك براند، هيبقى براند إيه؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 21,
+    "category": "ده ولا ده",
+    "question": "بحر ولا جبل؟",
+    "mode": "poll",
+    "options": [
+      "بحر",
+      "جبل"
+    ]
+  },
+  {
+    "id": 22,
+    "category": "ده ولا ده",
+    "question": "صيف ولا شتا؟",
+    "mode": "poll",
+    "options": [
+      "صيف",
+      "شتا"
+    ]
+  },
+  {
+    "id": 23,
+    "category": "ده ولا ده",
+    "question": "كشري ولا فول وطعمية؟",
+    "mode": "poll",
+    "options": [
+      "كشري",
+      "فول وطعمية"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "ده ولا ده",
+    "question": "قطط ولا كلاب؟",
+    "mode": "poll",
+    "options": [
+      "قطط",
+      "كلاب"
+    ]
+  },
+  {
+    "id": 25,
+    "category": "ده ولا ده",
+    "question": "تسهر ولا تصحى بدري؟",
+    "mode": "poll",
+    "options": [
+      "تسهر",
+      "تصحى بدري"
+    ]
+  },
+  {
+    "id": 26,
+    "category": "ده ولا ده",
+    "question": "فطار ولا عشا؟",
+    "mode": "poll",
+    "options": [
+      "فطار",
+      "عشا"
+    ]
+  },
+  {
+    "id": 27,
+    "category": "ده ولا ده",
+    "question": "نتفليكس ولا سينما؟",
+    "mode": "poll",
+    "options": [
+      "نتفليكس",
+      "سينما"
+    ]
+  },
+  {
+    "id": 28,
+    "category": "ده ولا ده",
+    "question": "مدينة ولا قرية؟",
+    "mode": "poll",
+    "options": [
+      "مدينة",
+      "قرية"
+    ]
+  },
+  {
+    "id": 29,
+    "category": "ده ولا ده",
+    "question": "حلو ولا حادق؟",
+    "mode": "poll",
+    "options": [
+      "حلو",
+      "حادق"
+    ]
+  },
+  {
+    "id": 30,
+    "category": "ده ولا ده",
+    "question": "موبايل ولا لابتوب؟",
+    "mode": "poll",
+    "options": [
+      "موبايل",
+      "لابتوب"
+    ]
+  },
+  {
+    "id": 31,
+    "category": "ضحك",
+    "question": "إيه أغرب حاجة عملتها وانت صغير؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 32,
+    "category": "ضحك",
+    "question": "إيه أكتر كذبة صدقتها وانت طفل؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 33,
+    "category": "ضحك",
+    "question": "إيه أسوأ هدية وصلتك في حياتك؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 34,
+    "category": "ضحك",
+    "question": "إيه موقف محرج لسه فاكره لحد دلوقتي؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 35,
+    "category": "ضحك",
+    "question": "لو في مسابقة أكل، تكسب في أنهي أكلة؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 36,
+    "category": "ضحك",
+    "question": "إيه أطرف اسم دلع اتناديت بيه؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 37,
+    "category": "ضحك",
+    "question": "لو حياتك مسلسل، هيبقى كوميدي ولا دراما؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 38,
+    "category": "ضحك",
+    "question": "إيه أكتر حاجة بتضحكك مهما كان مودك؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 39,
+    "category": "ضحك",
+    "question": "إيه موقف \"أنا مش مصدق إني عملت كده\" وفخور بيه؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 40,
+    "category": "ضحك",
+    "question": "إيه أغرب مكان نمت فيه؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 41,
+    "category": "موودك",
+    "question": "إيه الحاجة اللي بتشحن طاقتك؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 42,
+    "category": "موودك",
+    "question": "اكتب حاجة واحدة بتحبها في نفسك",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 43,
+    "category": "موودك",
+    "question": "إيه أحلى حاجة حصلتلك الأسبوع ده؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 44,
+    "category": "موودك",
+    "question": "لو مودك النهاردة طقس، يبقى إيه؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 45,
+    "category": "موودك",
+    "question": "إيه أكلة نفسك فيها دلوقتي حالاً؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 46,
+    "category": "موودك",
+    "question": "إيه الشغلانة اللي مستحيل تعملها أبداً؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 47,
+    "category": "موودك",
+    "question": "اكتب إنجاز صغير فخور بيه الفترة دي",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 48,
+    "category": "موودك",
+    "question": "لو هتحتفل بأي حاجة النهاردة، هتحتفل بإيه؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 49,
+    "category": "موودك",
+    "question": "إيه نصيحة سمعتها وغيّرت فيك حاجة؟",
+    "mode": "text",
+    "options": []
+  },
+  {
+    "id": 50,
+    "category": "موودك",
+    "question": "كلمة واحدة توصف مودك دلوقتي",
+    "mode": "text",
+    "options": []
+  }
+]

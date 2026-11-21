@@ -1,0 +1,662 @@
+[
+  {
+    "id": 1,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه أكلة تقدر تاكلها كل يوم من غير زهق؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Quick icebreakers",
+      "question": "What food could you eat every day without getting bored?",
+      "options": []
+    }
+  },
+  {
+    "id": 2,
+    "category": "كسرة جليد سريعة",
+    "question": "آخر صورة على موبايلك، إيه حكايتها؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Quick icebreakers",
+      "question": "What is the story behind the last photo on your phone?",
+      "options": []
+    }
+  },
+  {
+    "id": 3,
+    "category": "كسرة جليد سريعة",
+    "question": "شاي ولا قهوة؟ ومحدش يزعل",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Quick icebreakers",
+      "question": "Tea or coffee? No hard feelings!",
+      "options": []
+    }
+  },
+  {
+    "id": 4,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه أول حاجة بتعملها أول ما تصحى؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Quick icebreakers",
+      "question": "What is the first thing you do when you wake up?",
+      "options": []
+    }
+  },
+  {
+    "id": 5,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه اسم فيلم ممكن تتفرج عليه ١٠ مرات؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Quick icebreakers",
+      "question": "What film could you watch ten times?",
+      "options": []
+    }
+  },
+  {
+    "id": 6,
+    "category": "كسرة جليد سريعة",
+    "question": "آخر أغنية سمعتها وعجبتك؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Quick icebreakers",
+      "question": "What was the last song you heard and liked?",
+      "options": []
+    }
+  },
+  {
+    "id": 7,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه أغرب حاجة في شنطتك دلوقتي؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Quick icebreakers",
+      "question": "What is the strangest thing in your bag right now?",
+      "options": []
+    }
+  },
+  {
+    "id": 8,
+    "category": "كسرة جليد سريعة",
+    "question": "لو يومك ٢٥ ساعة، الساعة الزيادة تعمل فيها إيه؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Quick icebreakers",
+      "question": "If your day had 25 hours, what would you do with the extra hour?",
+      "options": []
+    }
+  },
+  {
+    "id": 9,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه اسم أول موبايل كان عندك؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Quick icebreakers",
+      "question": "What was your first mobile phone?",
+      "options": []
+    }
+  },
+  {
+    "id": 10,
+    "category": "كسرة جليد سريعة",
+    "question": "إيه أطرف كلمة مصرية بتحب تقولها؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Quick icebreakers",
+      "question": "What Egyptian expression do you find funniest?",
+      "options": []
+    }
+  },
+  {
+    "id": 11,
+    "category": "لو كنت...",
+    "question": "لو كنت شخصية كرتون، تكون مين؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "What if...",
+      "question": "If you were a cartoon character, who would you be?",
+      "options": []
+    }
+  },
+  {
+    "id": 12,
+    "category": "لو كنت...",
+    "question": "لو تقدر تسافر أي حتة بكرة، تروح فين؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "What if...",
+      "question": "If you could travel anywhere tomorrow, where would you go?",
+      "options": []
+    }
+  },
+  {
+    "id": 13,
+    "category": "لو كنت...",
+    "question": "لو عندك قوة خارقة واحدة، تختار إيه؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "What if...",
+      "question": "If you could have one superpower, what would it be?",
+      "options": []
+    }
+  },
+  {
+    "id": 14,
+    "category": "لو كنت...",
+    "question": "لو حياتك فيلم، مين يمثل دورك؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "What if...",
+      "question": "If your life were a film, who would play you?",
+      "options": []
+    }
+  },
+  {
+    "id": 15,
+    "category": "لو كنت...",
+    "question": "لو تقدر تقابل أي حد في العالم، مين؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "What if...",
+      "question": "If you could meet anyone in the world, who would it be?",
+      "options": []
+    }
+  },
+  {
+    "id": 16,
+    "category": "لو كنت...",
+    "question": "لو تشتغل أي شغلانة تانية خالص، تكون إيه؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "What if...",
+      "question": "If you could do any completely different job, what would it be?",
+      "options": []
+    }
+  },
+  {
+    "id": 17,
+    "category": "لو كنت...",
+    "question": "لو فلوسك مش هتخلص أبداً، أول حاجة تشتريها؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "What if...",
+      "question": "If your money could never run out, what would you buy first?",
+      "options": []
+    }
+  },
+  {
+    "id": 18,
+    "category": "لو كنت...",
+    "question": "لو ترجع بالزمن ١٠ سنين، هتقول لنفسك إيه؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "What if...",
+      "question": "If you could go back ten years, what would you tell yourself?",
+      "options": []
+    }
+  },
+  {
+    "id": 19,
+    "category": "لو كنت...",
+    "question": "لو تعيش في أي عصر تاني، تختار أنهي؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "What if...",
+      "question": "If you could live in another era, which would you choose?",
+      "options": []
+    }
+  },
+  {
+    "id": 20,
+    "category": "لو كنت...",
+    "question": "لو اسمك براند، هيبقى براند إيه؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "What if...",
+      "question": "If your name were a brand, what kind of brand would it be?",
+      "options": []
+    }
+  },
+  {
+    "id": 21,
+    "category": "ده ولا ده",
+    "question": "بحر ولا جبل؟",
+    "mode": "poll",
+    "options": [
+      "بحر",
+      "جبل"
+    ],
+    "en": {
+      "category": "This or that",
+      "question": "Beach or mountains?",
+      "options": [
+        "Beach",
+        "Mountains"
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "category": "ده ولا ده",
+    "question": "صيف ولا شتا؟",
+    "mode": "poll",
+    "options": [
+      "صيف",
+      "شتا"
+    ],
+    "en": {
+      "category": "This or that",
+      "question": "Summer or winter?",
+      "options": [
+        "Summer",
+        "Winter"
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "category": "ده ولا ده",
+    "question": "كشري ولا فول وطعمية؟",
+    "mode": "poll",
+    "options": [
+      "كشري",
+      "فول وطعمية"
+    ],
+    "en": {
+      "category": "This or that",
+      "question": "Koshari or ful medames and falafel?",
+      "options": [
+        "Koshari",
+        "Ful medames and falafel"
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "category": "ده ولا ده",
+    "question": "قطط ولا كلاب؟",
+    "mode": "poll",
+    "options": [
+      "قطط",
+      "كلاب"
+    ],
+    "en": {
+      "category": "This or that",
+      "question": "Cats or dogs?",
+      "options": [
+        "Cats",
+        "Dogs"
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "category": "ده ولا ده",
+    "question": "تسهر ولا تصحى بدري؟",
+    "mode": "poll",
+    "options": [
+      "تسهر",
+      "تصحى بدري"
+    ],
+    "en": {
+      "category": "This or that",
+      "question": "Stay up late or wake up early?",
+      "options": [
+        "Stay up late",
+        "Wake up early"
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "category": "ده ولا ده",
+    "question": "فطار ولا عشا؟",
+    "mode": "poll",
+    "options": [
+      "فطار",
+      "عشا"
+    ],
+    "en": {
+      "category": "This or that",
+      "question": "Breakfast or dinner?",
+      "options": [
+        "Breakfast",
+        "Dinner"
+      ]
+    }
+  },
+  {
+    "id": 27,
+    "category": "ده ولا ده",
+    "question": "نتفليكس ولا سينما؟",
+    "mode": "poll",
+    "options": [
+      "نتفليكس",
+      "سينما"
+    ],
+    "en": {
+      "category": "This or that",
+      "question": "Netflix or cinema?",
+      "options": [
+        "Netflix",
+        "Cinema"
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "category": "ده ولا ده",
+    "question": "مدينة ولا قرية؟",
+    "mode": "poll",
+    "options": [
+      "مدينة",
+      "قرية"
+    ],
+    "en": {
+      "category": "This or that",
+      "question": "City or village?",
+      "options": [
+        "City",
+        "Village"
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "category": "ده ولا ده",
+    "question": "حلو ولا حادق؟",
+    "mode": "poll",
+    "options": [
+      "حلو",
+      "حادق"
+    ],
+    "en": {
+      "category": "This or that",
+      "question": "Sweet or savoury?",
+      "options": [
+        "Sweet",
+        "Savoury"
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "category": "ده ولا ده",
+    "question": "موبايل ولا لابتوب؟",
+    "mode": "poll",
+    "options": [
+      "موبايل",
+      "لابتوب"
+    ],
+    "en": {
+      "category": "This or that",
+      "question": "Phone or laptop?",
+      "options": [
+        "Phone",
+        "Laptop"
+      ]
+    }
+  },
+  {
+    "id": 31,
+    "category": "ضحك",
+    "question": "إيه أغرب حاجة عملتها وانت صغير؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Laughs",
+      "question": "What is the strangest thing you did as a child?",
+      "options": []
+    }
+  },
+  {
+    "id": 32,
+    "category": "ضحك",
+    "question": "إيه أكتر كذبة صدقتها وانت طفل؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Laughs",
+      "question": "What is the biggest lie you believed as a child?",
+      "options": []
+    }
+  },
+  {
+    "id": 33,
+    "category": "ضحك",
+    "question": "إيه أسوأ هدية وصلتك في حياتك؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Laughs",
+      "question": "What is the worst gift you have ever received?",
+      "options": []
+    }
+  },
+  {
+    "id": 34,
+    "category": "ضحك",
+    "question": "إيه موقف محرج لسه فاكره لحد دلوقتي؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Laughs",
+      "question": "What embarrassing moment do you still remember?",
+      "options": []
+    }
+  },
+  {
+    "id": 35,
+    "category": "ضحك",
+    "question": "لو في مسابقة أكل، تكسب في أنهي أكلة؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Laughs",
+      "question": "What food would you win an eating contest with?",
+      "options": []
+    }
+  },
+  {
+    "id": 36,
+    "category": "ضحك",
+    "question": "إيه أطرف اسم دلع اتناديت بيه؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Laughs",
+      "question": "What is the funniest nickname you have ever had?",
+      "options": []
+    }
+  },
+  {
+    "id": 37,
+    "category": "ضحك",
+    "question": "لو حياتك مسلسل، هيبقى كوميدي ولا دراما؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Laughs",
+      "question": "If your life were a TV series, would it be a comedy or a drama?",
+      "options": []
+    }
+  },
+  {
+    "id": 38,
+    "category": "ضحك",
+    "question": "إيه أكتر حاجة بتضحكك مهما كان مودك؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Laughs",
+      "question": "What always makes you laugh, whatever your mood?",
+      "options": []
+    }
+  },
+  {
+    "id": 39,
+    "category": "ضحك",
+    "question": "إيه موقف \"أنا مش مصدق إني عملت كده\" وفخور بيه؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Laughs",
+      "question": "What is something you cannot believe you did, but feel proud of?",
+      "options": []
+    }
+  },
+  {
+    "id": 40,
+    "category": "ضحك",
+    "question": "إيه أغرب مكان نمت فيه؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Laughs",
+      "question": "What is the strangest place you have slept?",
+      "options": []
+    }
+  },
+  {
+    "id": 41,
+    "category": "موودك",
+    "question": "إيه الحاجة اللي بتشحن طاقتك؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Your mood",
+      "question": "What recharges your energy?",
+      "options": []
+    }
+  },
+  {
+    "id": 42,
+    "category": "موودك",
+    "question": "اكتب حاجة واحدة بتحبها في نفسك",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Your mood",
+      "question": "Write one thing you like about yourself.",
+      "options": []
+    }
+  },
+  {
+    "id": 43,
+    "category": "موودك",
+    "question": "إيه أحلى حاجة حصلتلك الأسبوع ده؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Your mood",
+      "question": "What is the nicest thing that happened to you this week?",
+      "options": []
+    }
+  },
+  {
+    "id": 44,
+    "category": "موودك",
+    "question": "لو مودك النهاردة طقس، يبقى إيه؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Your mood",
+      "question": "If your mood today were weather, what would it be?",
+      "options": []
+    }
+  },
+  {
+    "id": 45,
+    "category": "موودك",
+    "question": "إيه أكلة نفسك فيها دلوقتي حالاً؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Your mood",
+      "question": "What food are you craving right now?",
+      "options": []
+    }
+  },
+  {
+    "id": 46,
+    "category": "موودك",
+    "question": "إيه الشغلانة اللي مستحيل تعملها أبداً؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Your mood",
+      "question": "What job would you never do?",
+      "options": []
+    }
+  },
+  {
+    "id": 47,
+    "category": "موودك",
+    "question": "اكتب إنجاز صغير فخور بيه الفترة دي",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Your mood",
+      "question": "Write a small achievement you feel proud of lately.",
+      "options": []
+    }
+  },
+  {
+    "id": 48,
+    "category": "موودك",
+    "question": "لو هتحتفل بأي حاجة النهاردة، هتحتفل بإيه؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Your mood",
+      "question": "If you were celebrating something today, what would it be?",
+      "options": []
+    }
+  },
+  {
+    "id": 49,
+    "category": "موودك",
+    "question": "إيه نصيحة سمعتها وغيّرت فيك حاجة؟",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Your mood",
+      "question": "What piece of advice has changed you?",
+      "options": []
+    }
+  },
+  {
+    "id": 50,
+    "category": "موودك",
+    "question": "كلمة واحدة توصف مودك دلوقتي",
+    "mode": "text",
+    "options": [],
+    "en": {
+      "category": "Your mood",
+      "question": "Describe your mood right now in one word.",
+      "options": []
+    }
+  }
+]

@@ -1,0 +1,1 @@
+const fs=require('fs'), {PNG}=require('pngjs'),jsQR=require('jsqr');const p=PNG.sync.read(fs.readFileSync(process.argv[2]));const x=jsQR(new Uint8ClampedArray(p.data),p.width,p.height);if(!x)process.exit(2);console.log(x.data);

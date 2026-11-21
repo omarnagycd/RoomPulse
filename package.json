@@ -1,0 +1,21 @@
+{
+  "name": "roompulse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "python rebuild.py",
+    "test": "python test_bilingual.py",
+    "deploy": "wrangler deploy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsqr": "^1.4.0",
+    "pngjs": "^7.0.0",
+    "qrcode-generator": "^2.0.4",
+    "terser": "^5.51.3",
+    "wrangler": "^4.165.0"
+  }
+}
