@@ -7,7 +7,7 @@ if 'QUIZ MODULE (client)' in h: raise SystemExit('already built')
 css=(p/'quiz/client.css').read_text();A=p/'quiz/assets';AV=json.loads((A/'avatars.json').read_text())
 import re as _re
 SYM=''.join('<symbol id="qa%d" viewBox="0 0 64 64">%s</symbol>'%(i,_re.sub(r'^<svg[^>]*>|</svg>$','',v)) for i,v in enumerate(AV.values()))
-js='const QAV_SYMBOLS='+json.dumps(SYM)+';\n'+(p/'quiz/sound.js').read_text()+'\n'+(p/'quiz/client.js').read_text()+'\n'+(p/'quiz/extras.js').read_text()+'\n'+(p/'quiz/ui2.js').read_text();html=(p/'quiz/client.html').read_text()
+js='const QAV_SYMBOLS='+json.dumps(SYM)+';\n'+(p/'quiz/sound.js').read_text()+'\n'+(p/'quiz/client.js').read_text()+'\n'+(p/'quiz/extras.js').read_text()+'\n'+(p/'quiz/teams.js').read_text()+'\n'+(p/'quiz/ui2.js').read_text();html=(p/'quiz/client.html').read_text()
 h=h.replace('</style>',css+'</style>',1)
 tab='<button aria-pressed="false" class="secondary" id="wheelTab" type="button"><span data-i18n="العجلة">العجلة</span></button>'
 assert tab in h
@@ -25,6 +25,9 @@ assert old in h;h=h.replace(old,"const code=new URLSearchParams(location.search)
 anchor="document.querySelectorAll('a[href=\"/\"]').forEach(a=>a.href=appBase);"
 assert anchor in h;h=h.replace(anchor,js+"\n"+anchor,1)
 
+# ---- Wheel option B ----
+_i=h.index('function drawWheel(){');_j=h.index("canvas.setAttribute('aria-label',t('عجلة اختيار عشوائي')+' · '+wheelItems.length+' '+t('عنصر'));}",_i)+len("canvas.setAttribute('aria-label',t('عجلة اختيار عشوائي')+' · '+wheelItems.length+' '+t('عنصر'));}")
+h=h[:_i]+(p/'quiz/wheel.js').read_text().strip()+h[_j:]
 # ---- UI2: header, logo, tab icons, favicon, hero ----
 LL=(A/'logo-light.b64.txt').read_text();LD=(A/'logo-dark.b64.txt').read_text();FV=(A/'favicon.b64.txt').read_text();HE=(A/'hero.b64.txt').read_text()
 old='<a href="/"><span data-i18n="البداية">البداية</span></a>'
