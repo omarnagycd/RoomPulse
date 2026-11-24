@@ -161,3 +161,6 @@ Build: `python rebuild.py` regenerates worker.js from index.html and backend.js.
 40. The end of a game plays a real applause recording (CC0, OpenGameArt, eXpl0it3r) instead of synthesized noise.
 41. Admin sign-out lands directly on Team sign-in. Admin screens have a Team sign-in button, and Team sign-in has an Admin sign-in button.
 42. Quiz tab sign-in is one screen: choose As Admin or As Team at the top, then the username or email, password and Sign in below it. The footer (disclaimer line and Admin link) is removed.
+43. Quiz screens: the floating music and sound buttons no longer cover the content (extra space at the bottom), and each new question or result scrolls to the top so the timer and counters are not hidden behind the header.
+44. Arabic placeholder for the class or group name is now "مثال: باتش 12".
+45. Quiz sound: the music tune is pre-rendered once and looped (no more stutter on phones), the real CC0 applause plays at game end (no synthetic fallback, softer level to avoid clipping), and music is ON by default (the browser still needs one tap to unlock audio, so the pill shows a clear tap prompt until then).
