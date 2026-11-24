@@ -49,5 +49,6 @@ h=h.replace('<meta content="#E60000" name="theme-color"/>','<meta content="#E600
 h=h.replace('</style>','.qhero{background:#0b0405 url(data:image/jpeg;base64,'+HE+') center/cover no-repeat}</style>',1)
 a='<section id="welcome">';assert a in h
 h=h.replace(a,a+'<div class="qhero qhero-act" role="img" aria-label="RoomPulse"></div>',1)
+h,_n=_re.subn(r'<p class="header-intro">.*?</p>','',h,count=1,flags=_re.S);assert _n==1
 (p/'index.html').write_text(h)
 print('built')
