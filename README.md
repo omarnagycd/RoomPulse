@@ -115,17 +115,19 @@ A Kahoot-style live quiz on top of the existing RoomPulse tabs. Nothing existing
 Numbered feature list (Quiz):
 1. Admin quiz library behind a host passcode (set on first run): add, edit, duplicate, delete, reuse. Quizzes stay saved until deleted.
 2. Quiz builder with three question types: Multiple Choice (2-4 choices), Spot the Mistake (2-6 chat lines, pick the wrong one), Word Cloud (everyone types a word, live cloud).
-3. Per-question timer (5-240 s). Points for correct answers, higher for faster answers (1000 down to 500).
+3. Per-question timer (5-240 s). Each question has an editable max score (1-1000, default 10). A correct answer earns the max at 0 s, falling linearly to half the max at the time limit, measured to the millisecond and kept to 2 decimals (example, max 10, 20 s: 5 s = 8.75, 6 s = 8.50). Wrong or missing answers score 0.
 4. Join with code or QR from the existing join page. Participants enter a name. No account.
 5. Live big-screen host view with answered count and countdown; host can show results early. Results show automatically when everyone has answered or time ends.
 6. Leaderboard after every question and a top-3 podium at the end.
 7. Teams mode: 2-6 teams, players are balanced automatically, team standings use the average score per member.
 8. Trainer report after the session: percent correct per question, who answered wrong, who did not answer, word-cloud words. Export to CSV (opens in Excel).
-9. Quiz import and export as CSV (UTF-8, opens in Excel) plus a template download.
-10. Arabic and English everywhere, mobile and desktop, dark and light mode, same red/white liquid-glass look.
+9. Excel flow: download a real .xlsx template (room for 40 questions, a Read me sheet), fill it, upload it back (.xlsx or .csv) to create the quiz. Quiz export as CSV.
+10. Share button on the host screen: shares the join link and code (phone share sheet, or copies to the clipboard).
+11. History: every finished game is saved with date/time, quiz, players, scores, per-question points and team results, kept until the admin deletes it. Per-game CSV export.
+12. Arabic and English everywhere, mobile and desktop, dark and light mode, same red/white liquid-glass look.
 
 Not included yet (not chosen): streak, double points, kick player, lobby music, company logo, polls, type-answer, true/false, match-it, last-one-standing, self-paced mode, accounts/SSO, AI generation.
 
-Limits: free Cloudflare plan. Players poll about every 1.5 seconds, so several large sessions in one day can hit the free request quota. Finished games and their reports are kept 3 days. Maximum 200 players per game, 100 saved quizzes, 50 questions per quiz.
+Limits: free Cloudflare plan. Players poll about every 1.5 seconds, so several large sessions in one day can hit the free request quota. Live game state is kept 3 days; the saved History of finished games has no expiry and stays until deleted (D1 free tier: 500 MB per database, 100k row writes/day). Maximum 200 players per game, 100 saved quizzes, 50 questions per quiz.
 
 Build: `python rebuild.py` regenerates worker.js from index.html and backend.js. `quiz/` holds the quiz module sources and tests (`api_test.mjs`, `e2e.py`); `build_quiz.py` injects the client module into a clean index.html. Backend changes need a separately authorized Cloudflare deployment.
