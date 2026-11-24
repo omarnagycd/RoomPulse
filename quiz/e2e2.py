@@ -1,4 +1,4 @@
-import asyncio,re,os,json
+import asyncio,re,os,json,sys;sys.path.insert(0,"quiz");import tt;tt.seed()
 from playwright.async_api import async_playwright,expect
 BASE=os.getenv('BASE','http://localhost:8799');OUT='/downloads/qm/shots2/';os.makedirs(OUT,exist_ok=True)
 async def main():
@@ -10,7 +10,7 @@ async def main():
   ph=[await (await br.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True)).new_page() for _ in range(2)]
   for pg in [host]+ph: pg.on('pageerror',lambda e:errs.append(str(e)))
   await host.goto(BASE+'/?lang=ar');await host.locator('#quizTab').click()
-  await host.locator('#qpass').fill('omar1234');await host.locator('#qpass2').fill('omar1234');await host.locator('#qauth').click()
+  await host.locator('#qem').fill('t@x.com');await host.locator('#qpass').fill('secret12');await host.locator('#qauth').click()
   await expect(host.locator('#qnew')).to_be_visible()
   # template download
   async with host.expect_download() as d: await host.locator('#qtpl').click()
@@ -28,7 +28,7 @@ async def main():
   await host.locator('[data-f=points]').nth(1).fill('15')
   await host.locator('#qtitle').fill('تجربة ٣٠ سؤال');await host.screenshot(path=OUT+'02-builder-points.png')
   await host.locator('#qsave').click();await expect(host.locator('.qitem')).to_have_count(1)
-  await host.locator('[data-a=run]').click();await host.locator('#qteams').click();await host.locator('#qgo').click()
+  await host.locator('[data-a=run]').click();await host.locator('#qteams').click();await host.locator('#qcls').fill('Class A');await host.locator('#qgo').click()
   await expect(host.locator('.qcode')).to_have_text(re.compile(r'\d{6}'),timeout=15000)
   code=await host.locator('.qcode').inner_text()
   # share
@@ -54,9 +54,9 @@ async def main():
   await ph[0].screenshot(path=OUT+'04-phone-score.png')
   a=float(re.findall(r'\+([\d.]+)',t0)[0]);b=float(re.findall(r'\+([\d.]+)',t1)[0]);assert a>b and a<=30 and b>=1,(a,b)
   # end game through host API
-  r=await host.evaluate("""async(c)=>{const h=JSON.parse(sessionStorage.getItem('quiz.host'));const x=await fetch('/api/quiz/game/'+c+'/host',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+h.token},body:JSON.stringify({action:'end'})});return x.status}""",code);print('end status',r)
+  r=await host.evaluate("""async(c)=>{const h=JSON.parse(localStorage.getItem('quiz.host'));const x=await fetch('/api/quiz/game/'+c+'/host',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+h.token},body:JSON.stringify({action:'end'})});return x.status}""",code);print('end status',r)
   await host.reload();await host.locator('#quizTab').click()
-  await expect(host.locator('#qhist')).to_be_visible(timeout=10000);await host.locator('#qhist').click()
+  await expect(host.locator('[data-tab=hist]')).to_be_visible(timeout=10000);await host.locator('[data-tab=hist]').click()
   await expect(host.locator('#hlist .qitem')).to_have_count(1,timeout=10000)
   await host.screenshot(path=OUT+'05-history-list.png')
   await host.locator('[data-a=open]').click();await expect(host.locator('#hexp')).to_be_visible()
@@ -66,7 +66,7 @@ async def main():
   await host.locator('#hback').click()
   host.on('dialog',lambda dg:asyncio.ensure_future(dg.accept()))
   await host.locator('[data-a=del]').click();await expect(host.locator('#hlist')).to_have_count(0,timeout=10000);print('history delete ok')
-  await host.locator('#hlib').click()
+  await host.locator('[data-tab=lib]').click()
   await host.locator('#langBtn,[data-lang=en]').first.click() if await host.locator('#langBtn,[data-lang=en]').count() else None
   print('JS errors:',errs)
   await br.close()
