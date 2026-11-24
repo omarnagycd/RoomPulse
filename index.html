@@ -53,9 +53,9 @@ button.qa.picked{border-color:#fff;box-shadow:0 0 0 4px #252525}
 .qbar{height:10px;border-radius:6px;background:#E6000020;overflow:hidden;margin:10px 0}.qbar>i{display:block;height:100%;background:#E60000;transition:width .3s}
 .qlb .r{display:flex;justify-content:space-between;gap:10px;background:var(--glass-field,#ffffffc0);border-radius:12px;padding:10px 16px;margin:8px 0;font-weight:bold}
 .qlb .r.me{outline:2px solid #E60000}
-.qpod{direction:ltr;display:flex;gap:12px;align-items:flex-end;justify-content:center;height:250px;margin:16px 0}
-.qpod>div{flex:1;max-width:160px;border-radius:14px 14px 0 0;text-align:center;color:#fff;font-weight:900;padding:10px 6px;overflow-wrap:anywhere}
-.qpod .p1{background:#E60000;height:100%}.qpod .p2{background:#7a6068;height:70%}.qpod .p3{background:#b3001b;height:52%}
+.qpod{direction:ltr;display:flex;gap:8px;align-items:flex-end;justify-content:center;margin:16px 0}
+.qpod>div{flex:1;max-width:160px;border-radius:14px 14px 0 0;text-align:center;color:#fff;font-weight:900;padding:8px 4px;overflow-wrap:anywhere;min-width:0}.qpod .qcrown{display:block;margin:0 auto 2px}.qpod .pn{font-size:18px}.qpod .pnm{font-size:13px;line-height:1.25;margin-top:4px;word-break:break-word}.qpod .psc{font-size:13px;margin-top:2px;white-space:nowrap}
+.qpod .p1{background:#E60000;min-height:230px}.qpod .p2{background:#7a6068;min-height:175px}.qpod .p3{background:#b3001b;min-height:140px}
 .qcloud{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;align-items:center;padding:20px;line-height:1.3}
 .qbub{background:var(--glass-field,#fff);border:2px solid var(--glass-field-line,#d9b9c0);border-radius:16px;padding:12px 16px;margin:8px 0;width:100%;text-align:start;font:inherit;cursor:pointer;color:inherit}
 .qbub.picked{border-color:#E60000;background:#E6000014}.qbub.right{border-color:#1a9c4b;background:#eafaf0;color:#1c1c1c}.qbub.wrong{opacity:.55}
@@ -65,7 +65,7 @@ button.qa.picked{border-color:#fff;box-shadow:0 0 0 4px #252525}
 .qcenter{text-align:center}
 .qok{color:#1a9c4b}.qno{color:#E60000}
 .qbadge{font-size:13px;color:var(--glass-muted,#6b5960)}
-@media(max-width:560px){.qa{font-size:17px;padding:16px}.qpod{height:200px}}
+@media(max-width:560px){.qa{font-size:17px;padding:16px}.qpod .p1{min-height:210px}.qpod .p2{min-height:160px}.qpod .p3{min-height:125px}}
 .qhint{margin:6px 0 10px;padding:8px 14px;border-radius:14px;background:#ffffff99;border:1px solid #E6000033;color:#5a1e26;font-size:14px;text-align:start}
 #qmute[data-state=blocked]{animation:qpulse 1.6s ease-out infinite}@keyframes qpulse{0%{box-shadow:0 0 0 0 #e6000066}100%{box-shadow:0 0 0 16px #e6000000}}
 #qmute{position:fixed;bottom:16px;inset-inline-end:16px;z-index:50;width:46px;height:46px;min-height:46px;padding:0;border-radius:50%;font-size:20px;line-height:1}
@@ -525,7 +525,8 @@ function qav(i,c){return typeof i==='number'&&i>=0&&i<8?'<svg class="qav '+(c||'
 function lbHtml(s,meName){return '<div class="qlb">'+(s.leaderboard||[]).map(p=>'<div class="r'+(meName&&p.name===meName?' me':'')+'"><span>'+p.rank+'. '+qav(p.av)+'<bdi dir="auto">'+esc(p.name)+'</bdi>'+(s.teams?' <small class="qbadge">'+t('الفريق')+' '+p.team+'</small>':'')+'</span><span>'+fmtp(p.score)+'</span></div>').join('')+'</div>'}
 function teamHtml(s){return s.teamBoard?'<h3>'+t('ترتيب الفرق')+'</h3><div class="qlb">'+s.teamBoard.map((x,i)=>'<div class="r"><span>'+(i+1)+'. '+t('الفريق')+' '+x.team+' <small class="qbadge">'+x.members+' '+t('عضو')+'</small></span><span>'+fmtp(x.score)+'</span></div>').join('')+'</div>':''}
 function cloudHtml(words){if(!words||!words.length)return'';const mx=Math.max(...words.map(w=>w.n));const cols=['#E60000','#30242a','#b3001b','#7a6068'];return '<div class="qcloud" dir="auto">'+words.map((w,i)=>'<span style="font-size:'+Math.round(16+34*w.n/mx)+'px;font-weight:'+(w.n>1?900:700)+';color:'+cols[i%4]+'">'+esc(w.word)+'</span>').join('')+'</div>'}
-function podiumHtml(lb){const a=lb||[];const b=(i)=>a[i]?qav(a[i].av,'big')+'<bdi dir="auto">'+esc(a[i].name)+'</bdi><br>'+fmtp(a[i].score):'';return '<div class="qpod"><div class="p2">2<br>'+b(1)+'</div><div class="p1">1<br>'+b(0)+'</div><div class="p3">3<br>'+b(2)+'</div></div>'}
+function qcrown(c){return '<svg class="qcrown" viewBox="0 0 32 24" width="34" height="26" aria-hidden="true"><path d="M3 20 L1 6 L9 12 L16 2 L23 12 L31 6 L29 20 Z" fill="'+c[0]+'" stroke="'+c[1]+'" stroke-width="1.5" stroke-linejoin="round"/><rect x="3" y="20" width="26" height="3" rx="1.5" fill="'+c[1]+'"/><circle cx="16" cy="2.5" r="2" fill="'+c[0]+'" stroke="'+c[1]+'"/></svg>'}
+function podiumHtml(lb){const a=lb||[];const C=[['#FFD43B','#B8860B'],['#E3E6EA','#8A929C'],['#E0A15F','#8C5A25']];const b=(i)=>a[i]?qcrown(C[i])+'<div class="pn">'+(i+1)+'</div>'+qav(a[i].av,'big')+'<div class="pnm"><bdi dir="auto">'+esc(a[i].name)+'</bdi></div><div class="psc">'+fmtp(a[i].score)+'</div>':'';return '<div class="qpod"><div class="p2">'+b(1)+'</div><div class="p1">'+b(0)+'</div><div class="p3">'+b(2)+'</div></div>'}
 function qshare(){const s=Q.gs;if(!s)return;const u=location.origin+joinPath+'?code='+s.code+'&lang='+lang;const title=Q.host.title||s.title||'';const txt=t('انضم للكويز')+': '+title+'\n'+t('الكود')+': '+s.code+'\n'+u;if(navigator.share){navigator.share({title:title,text:txt,url:u}).catch(()=>{})}else{const done=()=>{const b=$('qshare');if(b){const o=b.textContent;b.textContent=t('اتنسخ الرابط والكود');setTimeout(()=>{if($('qshare'))$('qshare').textContent=o},2000)}};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done,()=>prompt(t('انسخ الرابط'),txt));else prompt(t('انسخ الرابط'),txt)}}
 async function qendGame(){if(!Q.host)return;if(!confirm(t('تنهي اللعبة دلوقتي؟ هتتسجل في السجل.')))return;try{await qapi('/game/'+Q.host.code+'/host',{action:'end'},Q.host.token);Q.sig='';if(Q.view==='host'){await hostTick()}else{Q.host=null;qhostSave();Q.gs=null;Q.report=null;await qreloadLib()}}catch(e){qerr(e)}}
 function hostView(r){hostView0(r);const b=r.querySelector('#qshare');if(b){b.onclick=qshare;if(Q.gs&&Q.gs.phase!=='ended'){const e=document.createElement('button');e.type='button';e.className='secondary qbtn-danger';e.id='qendgame';e.textContent=t('إنهاء اللعبة');e.onclick=qendGame;b.after(e)}}}
