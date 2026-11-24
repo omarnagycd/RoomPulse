@@ -126,6 +126,10 @@ Numbered feature list (Quiz):
 11. History: every finished game is saved with date/time, quiz, players, scores, per-question points and team results, kept until the admin deletes it. Per-game CSV export.
 12. Arabic and English everywhere, mobile and desktop, dark and light mode, same red/white liquid-glass look.
 13. End game: the host can end a game at any time, from the game page (lobby or during play) or from the library notice next to "Back to game". Ending saves the game to History.
+14. Sound: arcade music loops on the host screen while a question runs, a soft "ting" on a player's phone for a correct answer, a gentle two-note sound for a wrong one, and applause with confetti on the final results (host and players). Speaker button on each screen mutes it, remembered per device. Music is on by default. Everything is synthesized in the browser (no audio files, no cost).
+15. Step hints: a one-line hint at the top of each host screen (library, new quiz, launch, lobby, question, results, final).
+16. Autosave: a quiz being written is kept on the device while typing. If the page closes before saving, the draft is restored next time with a "start over" option. It is cleared once the quiz is saved.
+17. Per-quiz download: each saved quiz has an Excel (.xlsx) and CSV download that includes the quiz name. Upload it back through "Import from Excel" to re-create the quiz with the same name, questions, times and points.
 
 Not included yet (not chosen): streak, double points, kick player, lobby music, company logo, polls, type-answer, true/false, match-it, last-one-standing, self-paced mode, accounts/SSO, AI generation.
 
