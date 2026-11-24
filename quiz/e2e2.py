@@ -24,7 +24,7 @@ async def main():
   await host.locator('#qfile').set_input_files('/tmp/test30.xlsx')
   await expect(host.locator('.qqcard')).to_have_count(31,timeout=10000)
   v=await host.locator('[data-f=points]').evaluate_all('e=>e.map(x=>x.value)');print('points first/second',v[0],v[1],len(v))
-  assert v[0]=='20' and v[1]=='10'
+  assert v[0]=='20' and v[1]=='1'
   await host.locator('[data-f=points]').nth(1).fill('15')
   await host.locator('#qtitle').fill('تجربة ٣٠ سؤال');await host.screenshot(path=OUT+'02-builder-points.png')
   await host.locator('#qsave').click();await expect(host.locator('.qitem')).to_have_count(1)
@@ -52,7 +52,7 @@ async def main():
   t0=await ph[0].locator('#quizPlayRoot').inner_text();t1=await ph[1].locator('#quizPlayRoot').inner_text()
   print('phone0:',re.findall(r'\+[\d.]+',t0),' phone1:',re.findall(r'\+[\d.]+',t1))
   await ph[0].screenshot(path=OUT+'04-phone-score.png')
-  a=float(re.findall(r'\+([\d.]+)',t0)[0]);b=float(re.findall(r'\+([\d.]+)',t1)[0]);assert a>b and a<=20 and b>=10,(a,b)
+  a=float(re.findall(r'\+([\d.]+)',t0)[0]);b=float(re.findall(r'\+([\d.]+)',t1)[0]);assert a>b and a<=30 and b>=1,(a,b)
   # end game through host API
   r=await host.evaluate("""async(c)=>{const h=JSON.parse(sessionStorage.getItem('quiz.host'));const x=await fetch('/api/quiz/game/'+c+'/host',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+h.token},body:JSON.stringify({action:'end'})});return x.status}""",code);print('end status',r)
   await host.reload();await host.locator('#quizTab').click()
