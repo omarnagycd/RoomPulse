@@ -115,7 +115,7 @@ A Kahoot-style live quiz on top of the existing RoomPulse tabs. Nothing existing
 Numbered feature list (Quiz):
 1. Admin quiz library behind a host passcode (set on first run): add, edit, duplicate, delete, reuse. Quizzes stay saved until deleted.
 2. Quiz builder with three question types: Multiple Choice (2-4 choices), Spot the Mistake (2-6 chat lines, pick the wrong one), Word Cloud (everyone types a word, live cloud).
-3. Per-question timer (5-240 s). Each question has an editable max score (1-1000, default 10). A correct answer earns the max at 0 s, falling linearly to half the max at the time limit, measured to the millisecond and kept to 2 decimals (example, max 10, 20 s: 5 s = 8.75, 6 s = 8.50). Wrong or missing answers score 0.
+3. Per-question timer (5-240 s). Each question has editable points P (1-100, default 1; a builder box sets all questions at once, with a reset-to-1 button; any saved value above 100, such as old quizzes, counts as 1). A correct answer earns P x (1 + 0.5 x (1 - t/T)), t = answer time, T = timer, measured to the millisecond and kept to 2 decimals (example P=1, 20 s: instant 1.5, 5 s 1.38, 6 s 1.35, last second 1). Wrong or missing answers score 0.
 4. Join with code or QR from the existing join page. Participants enter a name. No account.
 5. Live big-screen host view with answered count and countdown; host can show results early. Results show automatically when everyone has answered or time ends.
 6. Leaderboard after every question and a top-3 podium at the end.
