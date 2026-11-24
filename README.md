@@ -151,3 +151,8 @@ Build: `python rebuild.py` regenerates worker.js from index.html and backend.js.
 30. Header: no more jitter on scroll (shrinks without changing page height, scroll anchoring off) and a one-row compact header on phones.
 31. Dark mode: quieter and more premium, no glow on borders or text.
 32. Wheel redesign (option B "Red"): deep-red gradient segments, white names that always read upright, a dark rim with small dots, a white pointer and a glass hub. No glow.
+33. Simplified Admin: one screen. Create a Team with a name, one shared username (or email) and a password (Generate button), see all Teams, give a Team a new password, or delete a Team (type its name to confirm). Only the Admin can do this; Teams cannot sign up or create other Teams. Passwords are stored hashed and can never be shown again.
+34. Username or email sign-in for Teams and for the Admin (letters, digits, dot, dash, 3 or more, or an email; not case sensitive).
+35. Header is fixed (sticky) at full size: it never shrinks into icons and never changes while scrolling.
+36. Quiz builder has "Upload Excel or CSV" and "Download Excel template" next to the export buttons.
+37. The empty default Team is no longer recreated when the Worker restarts.
