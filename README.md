@@ -136,3 +136,8 @@ Not included yet (not chosen): streak, double points, kick player, lobby music, 
 Limits: free Cloudflare plan. Players poll about every 1.5 seconds, so several large sessions in one day can hit the free request quota. Live game state is kept 3 days; the saved History of finished games has no expiry and stays until deleted (D1 free tier: 500 MB per database, 100k row writes/day). Maximum 200 players per game, 100 saved quizzes, 50 questions per quiz.
 
 Build: `python rebuild.py` regenerates worker.js from index.html and backend.js. `quiz/` holds the quiz module sources and tests (`api_test.mjs`, `e2e.py`); `build_quiz.py` injects the client module into a clean index.html. Backend changes need a separately authorized Cloudflare deployment.
+18. Global header: a sticky frosted-glass header on every page (blur 28px, glossy rim, red glow) with the RoomPulse logo (white "Room", red "Pulse" in dark mode, dark in light mode) and icon tabs. It shrinks while scrolling and returns to full size at the top. Light mode is the default. A soft blurred red and white colour field sits behind the page.
+19. Quiz home: a hero banner, three big buttons (make a quiz, start a live game, join with a code), the quiz library with an icon per quiz, and quick stats (games played, total participants, average players per game, saved quizzes) computed from History and the library.
+20. Avatars: players pick one of 8 animal avatars (panda, dino, cat, fox, frog, penguin, rabbit, lion) on the name screen. Shown in the lobby, leaderboard, podium and player chip.
+21. Validation toast: a clear message that fades after 5 seconds when a quiz cannot be saved.
+22. Favicon and logo images (raster, so they are best at about 560 px wide or smaller).
