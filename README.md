@@ -125,6 +125,7 @@ Numbered feature list (Quiz):
 10. Share button on the host screen: shares the join link and code (phone share sheet, or copies to the clipboard).
 11. History: every finished game is saved with date/time, quiz, players, scores, per-question points and team results, kept until the admin deletes it. Per-game CSV export.
 12. Arabic and English everywhere, mobile and desktop, dark and light mode, same red/white liquid-glass look.
+13. End game: the host can end a game at any time, from the game page (lobby or during play) or from the library notice next to "Back to game". Ending saves the game to History.
 
 Not included yet (not chosen): streak, double points, kick player, lobby music, company logo, polls, type-answer, true/false, match-it, last-one-standing, self-paced mode, accounts/SSO, AI generation.
 
