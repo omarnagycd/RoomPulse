@@ -86,3 +86,21 @@ html[data-theme=dark] header .header-intro{color:#f1dfe3}
 /* blurred colour field behind the page */
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 12% 14%,rgba(255,40,70,.55),transparent 28%),radial-gradient(circle at 88% 10%,rgba(255,255,255,.95),transparent 24%),radial-gradient(circle at 70% 42%,rgba(230,0,30,.38),transparent 30%),radial-gradient(circle at 8% 62%,rgba(255,255,255,.9),transparent 26%),radial-gradient(circle at 92% 86%,rgba(255,60,90,.5),transparent 30%),radial-gradient(circle at 40% 96%,rgba(255,255,255,.8),transparent 26%)}
 html[data-theme=dark] body::before{background:radial-gradient(circle at 12% 14%,rgba(255,30,60,.55),transparent 28%),radial-gradient(circle at 88% 10%,rgba(120,0,15,.7),transparent 26%),radial-gradient(circle at 70% 42%,rgba(255,20,50,.38),transparent 30%),radial-gradient(circle at 8% 62%,rgba(150,0,20,.65),transparent 26%),radial-gradient(circle at 92% 86%,rgba(255,50,80,.45),transparent 30%),radial-gradient(circle at 40% 96%,rgba(90,0,10,.7),transparent 26%)}
+/* dark mode: quiet, premium. No glow on borders or text. */
+html[data-theme=dark]{--cg-bg:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.025) 60%);--cg-rim:inset 0 1px 0 rgba(255,255,255,.10),0 10px 30px rgba(0,0,0,.35)}
+html[data-theme=dark] header,html[data-theme=dark] .qglass,html[data-theme=dark] .qbt.w,html[data-theme=dark] .qbt.d,html[data-theme=dark] .qsc{border-color:rgba(255,255,255,.10)!important;box-shadow:var(--cg-rim)!important}
+html[data-theme=dark] header .section-tabs{background:rgba(255,255,255,.04)!important;border-color:rgba(255,255,255,.10)!important;box-shadow:none!important}
+html[data-theme=dark] .qbt.r{border:1px solid rgba(255,255,255,.18)!important;box-shadow:0 8px 22px rgba(0,0,0,.35)!important;background:linear-gradient(135deg,#c8142a,#8e0a1c)!important}
+html[data-theme=dark] .qhero{border-color:rgba(255,255,255,.12);box-shadow:0 10px 28px rgba(0,0,0,.45)}
+html[data-theme=dark] .card,html[data-theme=dark] .welcome-grid>div,html[data-theme=dark] .bank-panel,html[data-theme=dark] .timer-setup,html[data-theme=dark] .wheel-stage,html[data-theme=dark] .section-tabs{box-shadow:0 10px 30px rgba(0,0,0,.35)!important}
+html[data-theme=dark] *{text-shadow:none!important}
+html[data-theme=dark] body::before{opacity:.55}
+/* header: layout never changes while scrolling (no jitter) */
+header{transition:none}header>*{transition:opacity .16s ease}
+header.hdr-s{padding:6px 12px!important}
+header.hdr-s .topnav{flex-wrap:nowrap!important;gap:8px}
+@media(max-width:700px){header.hdr-s .brand{display:none}header.hdr-s .section-tabs{order:0!important;flex:1 1 auto!important;min-width:0;padding:3px!important}header.hdr-s .section-tabs button{font-size:0!important;min-width:0!important;padding:8px 12px!important}header.hdr-s .section-tabs button[aria-pressed=true]{font-size:13px!important}header.hdr-s .section-tabs .tbi{margin:0}header.hdr-s .section-tabs button[aria-pressed=true] .tbi{margin-inline-end:5px}}
+html,body{overflow-anchor:none}
+header.hdr-s .topnav-with-language{padding-bottom:0!important;border-bottom:0!important}
+@media(max-width:700px){header.hdr-s .section-tabs button[aria-pressed=true]{font-size:12px!important;padding:8px 10px!important}header.hdr-s .language-switch{padding:2px!important}header.hdr-s .language-switch button{padding:6px 10px!important}header.hdr-s #themeToggle,header.hdr-s .theme-toggle{padding:6px 10px!important}}
+@media(max-width:700px){header.hdr-s .section-tabs button[aria-pressed=true]{font-size:0!important;padding:8px 14px!important}header.hdr-s .section-tabs button[aria-pressed=true] svg,header.hdr-s .section-tabs button[aria-pressed=true] i{font-size:16px}}
