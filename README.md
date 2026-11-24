@@ -160,3 +160,4 @@ Build: `python rebuild.py` regenerates worker.js from index.html and backend.js.
 39. Game music is a new brighter arcade tune (still off by default); the music button on the host screen is now bigger and labeled (Music: on or off).
 40. The end of a game plays a real applause recording (CC0, OpenGameArt, eXpl0it3r) instead of synthesized noise.
 41. Admin sign-out lands directly on Team sign-in. Admin screens have a Team sign-in button, and Team sign-in has an Admin sign-in button.
+42. Quiz tab sign-in is one screen: choose As Admin or As Team at the top, then the username or email, password and Sign in below it. The footer (disclaimer line and Admin link) is removed.
