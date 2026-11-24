@@ -29,7 +29,7 @@ r=await call('/game/'+code+'/answer',{client:P[0],qi:0,choice:1});ok(r.d.duplica
 await call('/game/'+code+'/answer',{client:P[1],qi:0,choice:1});
 await new Promise(z=>setTimeout(z,1200));
 r=await call('/game/'+code+'/answer',{client:P[2],qi:0,choice:0});
-r=await call('/game/'+code+'/state?client='+P[0]);ok(r.d.phase==='reveal'&&r.d.counts.join()==='2,1,0'&&r.d.me.ok===true&&r.d.me.points>=5&&r.d.me.points<=10&&r.d.leaderboard.length===3&&r.d.teamBoard.length===2,'reveal '+JSON.stringify(r.d.me));
+r=await call('/game/'+code+'/state?client='+P[0]);ok(r.d.phase==='reveal'&&r.d.counts.join()==='2,1,0'&&r.d.me.ok===true&&r.d.me.points>=10&&r.d.me.points<=15&&r.d.leaderboard.length===3&&r.d.teamBoard.length===2,'reveal '+JSON.stringify(r.d.me));
 {const s0=(await call('/game/'+code+'/state?client='+P[0])).d,s2=(await call('/game/'+code+'/state?client='+P[2])).d,s1=(await call('/game/'+code+'/state?client='+P[1])).d;
  console.log('scores fast/slow/wrong:',s0.me.points,s2.me.points,s1.me.points);
  ok(s0.me.points>s2.me.points,'faster correct answer scores higher ('+s0.me.points+' > '+s2.me.points+')');
@@ -48,6 +48,9 @@ r=await call('/game/'+code+'/report');ok(r.s===403,'report needs host');
 r=await call('/game/'+code+'/host',{action:'start'});ok(r.s===403,'host needs token');
 r=await call('/library/delete',{id},T);r=await call('/library',null,T);ok(r.d.quizzes.length===0,'delete');
 r=await call('/game/'+code+'/state?client='+P[0]);ok(r.s===200,'game survives quiz delete (snapshot)');
+{const q2={title:'legacy',questions:[{type:'mc',text:'q',options:['a','b'],correct:0,time:10,points:1000}]};r=await call('/library/save',{quiz:q2},T);ok(r.s===200,'legacy 1000 accepted');const i2=r.d.id;r=await call('/game/create',{quizId:i2},T);const c2=r.d.code,H2=r.d.token;await call('/game/'+c2+'/join',{client:'lg1',name:'L'});await call('/game/'+c2+'/host',{action:'start'},H2);await call('/game/'+c2+'/answer',{client:'lg1',qi:0,choice:0});await call('/game/'+c2+'/host',{action:'reveal'},H2);r=await call('/game/'+c2+'/state?client=lg1');console.log('legacy points',r.d.me.points);ok(r.d.me.points>=1&&r.d.me.points<=1.5,'legacy >100 falls back to 1 ('+r.d.me.points+')');
+r=await call('/library/save',{quiz:{title:'x',questions:[{type:'mc',text:'q',options:['a','b'],correct:0,time:10,points:50.5}]}},T);ok(r.s===400,'fraction rejected');
+r=await call('/library/save',{quiz:{title:'d',questions:[{type:'mc',text:'q',options:['a','b'],correct:0,time:10}]}},T);ok(r.s===200,'default ok');}
 r=await call('/admin/change',{passcode:'omar2026',newPasscode:'new1234'});ok(r.s===200,'change passcode');
 r=await call('/library',null,T);ok(r.s===401,'old token revoked');
 // existing endpoints still work
