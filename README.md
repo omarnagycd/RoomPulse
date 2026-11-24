@@ -169,3 +169,4 @@ Build: `python rebuild.py` regenerates worker.js from index.html and backend.js.
 48. The Activities and Quiz sign-in screens now start with a line, "Want an account? Tap here", that opens the Contact tab so the visitor can reach the owner, who then creates a Team for them (Arabic and English).
 49. Admin > Teams: each team has an Edit button to change the team name and the username. The password is never changed there, and the team's existing password keeps working under the new username. A username already in use is refused.
 50. The home page info card title is now "Before you start" (قبل ما تبدأ) instead of the pilot wording; the useful lines under it stay.
+51. Terms of Use in the footer (Arabic and English): a "شروط الاستخدام" link opens a short plain-language page of terms (ownership of RoomPulse content, users responsible for what they upload, no content they do not own, as-is and no liability), with "© RoomPulse · عمر محمد ناجي" under it.
