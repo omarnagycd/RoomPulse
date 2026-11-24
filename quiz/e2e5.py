@@ -1,4 +1,4 @@
-import asyncio,re,os
+import asyncio,sys;sys.path.insert(0,"quiz");import tt;tt.seed();import re,os
 from playwright.async_api import async_playwright,expect
 BASE=os.getenv('BASE','http://localhost:8799');OUT='/downloads/qm/shots5/';os.makedirs(OUT,exist_ok=True)
 async def main():
@@ -10,7 +10,7 @@ async def main():
    await pg.add_init_script("localStorage.setItem('roompulse.theme','%s')"%theme);return pg
   h=await newpage(1280,900);await h.goto(BASE+'/?lang=ar');await h.wait_for_timeout(800);await h.screenshot(path=OUT+'01-activities-light.png')
   await h.locator('#quizTab').click()
-  await h.locator('#qpass').fill('omar1234');await h.locator('#qpass2').fill('omar1234');await h.locator('#qauth').click()
+  await h.locator('#qem').fill('t@x.com');await h.locator('#qpass').fill('secret12');await h.locator('#qauth').click()
   await expect(h.locator('#qnew')).to_be_visible()
   await h.locator('#qnew').click();await h.locator('#qtitle').fill('كويز الحيوانات')
   await h.locator('#qsave').click();await expect(h.locator('#qtoast')).to_be_visible();print('toast ok');await h.screenshot(path=OUT+'02-toast.png')
@@ -25,7 +25,7 @@ async def main():
   await h.screenshot(path=OUT+'04-sticky.png');await h.evaluate("window.scrollTo(0,0)");await h.wait_for_timeout(500)
   print('restored',not await h.evaluate("document.querySelector('header').classList.contains('hdr-s')"))
   # game with avatar
-  await h.locator('[data-a=run]').click();await h.locator('#qgo').click();await expect(h.locator('.qcode')).to_have_text(re.compile(r'\d{6}'),timeout=15000);code=await h.locator('.qcode').inner_text()
+  await h.locator('[data-a=run]').click();await h.locator('#qcls').fill('Class A');await h.locator('#qgo').click();await expect(h.locator('.qcode')).to_have_text(re.compile(r'\d{6}'),timeout=15000);code=await h.locator('.qcode').inner_text()
   m=await newpage(390,800);await m.goto(BASE+'/join?code='+code+'&lang=ar');await expect(m.locator('.qavpick')).to_have_count(8,timeout=15000)
   await m.locator('.qavpick').nth(1).click();await m.locator('#qname').fill('سارة');await m.screenshot(path=OUT+'05-player-name-phone.png')
   await m.locator('#qjoin').click();await h.wait_for_timeout(2500);await expect(h.locator('.qchip .qav')).to_have_count(1);print('avatar in lobby ok');await h.screenshot(path=OUT+'06-lobby.png')
