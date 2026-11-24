@@ -48,10 +48,11 @@ for k,v in IC.items():
 anchor='</a><div aria-label="Language / اللغة"'
 assert anchor in h;h=h.replace(anchor,'</a>'+nav+'<div aria-label="Language / اللغة"',1)
 h=h.replace('<meta content="#E60000" name="theme-color"/>','<meta content="#E60000" name="theme-color"/><link rel="icon" type="image/png" href="data:image/png;base64,'+FV+'"/>',1)
-h=h.replace('</style>','.qhero{background:#0b0405 url(data:image/jpeg;base64,'+HE+') center/cover no-repeat}</style>',1)
+HD=(A/'hero-desktop.b64.txt').read_text();HM=(A/'hero-mobile.b64.txt').read_text()
+h=h.replace('</style>','.qhero{background:#0b0405 url(data:image/jpeg;base64,'+HD+') center/100% 100% no-repeat}@media(max-width:700px){.qhero{background-image:url(data:image/jpeg;base64,'+HM+')}}</style>',1)
 a='<section id="welcome">';assert a in h
 h=h.replace(a,a+'<div class="qhero qhero-act" role="img" aria-label="RoomPulse"></div>',1)
 h,_n=_re.subn(r'<p class="header-intro">.*?</p>','',h,count=1,flags=_re.S);assert _n==1
-import sys as _s;_s.path.insert(0,str(p/'quiz'));import contact as _c;h=_c.apply(h);import gate as _g;h=_g.apply(h);import terms as _t;h=_t.apply(h)
+import sys as _s;_s.path.insert(0,str(p/'quiz'));import contact as _c;h=_c.apply(h);import gate as _g;h=_g.apply(h);import terms as _t;h=_t.apply(h);import howto as _h;h=_h.apply(h)
 (p/'index.html').write_text(h)
 print('built')
