@@ -1,0 +1,165 @@
+/* ===== QUIZ MODULE (client) ===== */
+Object.assign(EN,{
+"كويز":"Quiz","مكتبة الكويزات":"Quiz library","كويز جديد":"New quiz","استيراد من ملف Excel (CSV)":"Import from Excel (CSV)","قالب جاهز":"Template","تغيير كلمة السر":"Change passcode","خروج":"Log out",
+"أول مرة؟ اختار كلمة سر للصفحة دي. هتكتبها أنت هنا بنفسك، ومش هتتبعت في أي شات.":"First time here. Choose a passcode for this page. You type it yourself, it is never sent in chat.",
+"كلمة السر":"Passcode","تأكيد كلمة السر":"Confirm passcode","احفظ كلمة السر":"Save passcode","ادخل":"Enter","كلمتين السر مش زي بعض.":"The two passcodes do not match.",
+"ادخل كلمة السر عشان تفتح مكتبة الكويزات.":"Enter your passcode to open the quiz library.","مفيش كويزات لسه. اعمل أول كويز.":"No quizzes yet. Create your first one.",
+"سؤال":"questions","تشغيل":"Run","تعديل":"Edit","نسخ":"Duplicate","حذف":"Delete","تمسح الكويز ده نهائياً؟":"Delete this quiz permanently?","آخر تعديل":"Last edited",
+"الكويزات بتتحفظ وتفضل موجودة لحد ما تمسحها.":"Quizzes are saved and stay until you delete them.","عندك لعبة شغالة":"You have a game in progress","ارجع للعبة":"Back to the game",
+"اسم الكويز":"Quiz name","أضف سؤال":"Add a question","اختيار من متعدد":"Multiple Choice","اكتشف الغلطة":"Spot the Mistake","سحابة كلمات":"Word Cloud",
+"نص السؤال":"Question text","الموقف أو التعليمات":"Situation or instruction","اختار الإجابة الصح":"Mark the correct answer","اختار السطر الغلط":"Mark the mistake","إضافة اختيار":"Add choice","إضافة سطر":"Add line",
+"اختيار":"Choice","سطر في المحادثة":"Chat line","الوقت بالثواني":"Time (seconds)","احذف السؤال":"Delete question","فوق":"Up","تحت":"Down","احفظ الكويز":"Save quiz","إلغاء":"Cancel","تصدير CSV":"Export CSV",
+"اتحفظ الكويز.":"Quiz saved.","اكتب اسم الكويز.":"Enter a quiz name.","أضف سؤال واحد على الأقل.":"Add at least one question.","اكتب نص كل سؤال.":"Write the text of every question.","كمّل اختيارات كل سؤال.":"Complete the choices of every question.","حدد الإجابة الصح في كل سؤال.":"Mark the correct answer in every question.",
+"الكل يكتب كلمة قصيرة وتظهر سحابة حية.":"Everyone types a short word and a live cloud appears.","المتدرب يختار من موبايله، والنقاط بالسرعة.":"Players pick on their phones. Points reward speed.","محادثة فيها غلطة، والمتدرب يختار السطر الغلط.":"A conversation with one mistake. Players pick the wrong line.",
+"شغّل الكويز":"Run the quiz","كل واحد لوحده":"Everyone solo","فرق":"Teams","عدد الفرق":"Number of teams","ابدأ اللوبي":"Open the lobby","الكويز":"Quiz",
+"ادخل على الرابط واكتب الكود":"Open the link and enter the code","أو امسح الـ QR":"or scan the QR","انضموا":"joined","استنى المتدربين يدخلوا…":"Waiting for players…","ابدأ الكويز":"Start quiz",
+"أجاوبوا":"answered","اعرض النتيجة دلوقتي":"Show results now","السؤال التالي":"Next question","اعرض النتيجة النهائية":"Show final results","الإجابة الصح":"Correct answer","الترتيب":"Leaderboard","ترتيب الفرق":"Team standings","الفريق":"Team","نقطة":"pts","عضو":"members",
+"النتيجة النهائية":"Final results","تقرير الجلسة":"Session report","صح":"correct","محتاج مراجعة":"needs review","اللي غلطوا":"Got it wrong","ماجاوبوش":"No answer","رجوع للمكتبة":"Back to library","تصدير النتايج CSV":"Export results CSV","جاري تجهيز التقرير…":"Preparing the report…",
+"اكتب اسمك":"Enter your name","ادخل الكويز":"Join the quiz","أنت جوّه. استنى المدرب يبدأ.":"You are in. Wait for the trainer to start.","فريقك":"Your team","اتسجلت إجابتك. استنى باقي القاعة…":"Answer locked in. Waiting for the room…","ابعت":"Send","اكتب كلمة":"Type a word","ابعت الإجابة":"Send answer",
+"إجابة صح!":"Correct!","إجابة غلط":"Wrong","وقتك خلص":"Time is up","نقاطك":"Your score","مركزك":"Your rank","ترتيب فريقك":"Your team rank","الكويز خلص. شكراً على المشاركة!":"The quiz is over. Thanks for playing!","استنى السؤال الجاي…":"Waiting for the next question…","ما جاوبتش":"No answer",
+"الكود غير صحيح أو الكويز انتهى.":"The code is wrong or the quiz has ended.","كلمة السر غلط.":"Wrong passcode.","اكتب كلمة السر الأول.":"Enter the passcode first.","الجلسة انتهت. ادخل كلمة السر تاني.":"Session expired. Enter the passcode again.",
+"كلمة السر من ٤ لـ ٦٤ حرف أو رقم.":"Passcode must be 4 to 64 characters.","كلمة السر متحددة بالفعل. ادخل بيها.":"The passcode is already set. Enter it.","محاولات كتير غلط. استنى ١٥ دقيقة وجرّب تاني.":"Too many wrong attempts. Wait 15 minutes and try again.",
+"الكويز مش موجود.":"Quiz not found.","وصلت للحد الأقصى ١٠٠ كويز. امسح كويز قديم.":"Limit of 100 quizzes reached. Delete an old one.","مفيش مشاركين لسه.":"No players yet.","الكويز بدأ بالفعل.":"The quiz already started.","السؤال ده مش مفتوح.":"This question is not open.","الوقت خلص.":"Time is up.","ادخل بالاسم الأول.":"Join with your name first.",
+"اكتب اسمك لحد ٤٠ حرف.":"Enter your name, up to 40 characters.","وصلنا للحد الأقصى ٢٠٠ مشارك.":"Limit of 200 players reached.","الكويز خلص.":"The quiz has ended.","اكتب كلمة أو جملة قصيرة لحد ٣٠ حرف.":"Type a short word or phrase, up to 30 characters.","اختيار غير صحيح.":"Invalid choice.","شاشة المدرب دي مش متاحة من المتصفح الحالي.":"This trainer screen is not available from this browser.",
+"الملف مفيهوش أسئلة صالحة.":"The file has no valid questions.","اتفتح الكويز من الملف. راجعه واحفظه.":"Quiz loaded from the file. Review it and save.","الشعار":"Logo"
+});
+const Q={tok:null,view:'auth',lib:[],draft:null,draftId:null,launch:null,host:null,gs:null,off:0,pl:null,poll:null,sel:-1,report:null,sig:'',configured:null};
+try{Q.tok=localStorage.getItem('quiz.admin')}catch{}
+try{Q.host=JSON.parse(sessionStorage.getItem('quiz.host')||'null')}catch{}
+const qapi=(p,b,tk)=>api('/quiz'+p,b,tk);
+const qroot=()=>$(role==='quizPlay'?'quizPlayRoot':'quizRoot');
+const SYM=['▲','◆','●','■','★','✚'];
+function qsetTok(v){Q.tok=v;try{v?localStorage.setItem('quiz.admin',v):localStorage.removeItem('quiz.admin')}catch{}}
+function qhostSave(){try{Q.host?sessionStorage.setItem('quiz.host',JSON.stringify(Q.host)):sessionStorage.removeItem('quiz.host')}catch{}}
+function qstop(){clearInterval(Q.poll);Q.poll=null}
+function qerr(e){if(/الجلسة انتهت/.test(e.message)&&Q.tok&&role==='quiz'){qsetTok(null);Q.view='auth'}error(e);}
+function qrem(s){return Math.max(0,Math.ceil((s.qEnd-(Date.now()+Q.off))/1000))}
+function qnum(n){return String(n)}
+function qblank(type){return type==='cloud'?{type,text:'',time:30}:{type,text:'',options:type==='spot'?['','']:['','',''],correct:0,time:20,points:1000}}
+/* ---------- host: open ---------- */
+async function openQuiz(){show('quiz');Q.sig='';if(Q.host&&Q.view==='host'){startHostPoll();return}
+ try{const st=await qapi('/admin/status');Q.configured=st.configured}catch(e){error(e);return}
+ if(Q.tok){try{const l=await qapi('/library',null,Q.tok);Q.lib=l.quizzes;Q.view='lib'}catch(e){qsetTok(null);Q.view='auth'}}else Q.view='auth';
+ qrender()}
+function qrender(){if(role!=='quiz')return;const r=$('quizRoot');
+ if(Q.view==='auth')return authView(r);if(Q.view==='lib')return libView(r);if(Q.view==='edit')return editView(r);if(Q.view==='launch')return launchView(r);if(Q.view==='host')return hostView(r)}
+function authView(r){const setup=!Q.configured;r.innerHTML='<span class="eyebrow">'+t('كويز')+'</span><h2>'+t('كويز')+'</h2><div class="qglass"><p>'+t(setup?'أول مرة؟ اختار كلمة سر للصفحة دي. هتكتبها أنت هنا بنفسك، ومش هتتبعت في أي شات.':'ادخل كلمة السر عشان تفتح مكتبة الكويزات.')+'</p><div class="fields"><div><label for="qpass">'+t('كلمة السر')+'</label><input id="qpass" type="password" autocomplete="'+(setup?'new-password':'current-password')+'"></div>'+(setup?'<div><label for="qpass2">'+t('تأكيد كلمة السر')+'</label><input id="qpass2" type="password" autocomplete="new-password"></div>':'')+'</div><div class="actions"><button id="qauth">'+t(setup?'احفظ كلمة السر':'ادخل')+'</button></div></div>';
+ const go=async()=>{const p=$('qpass').value;try{if(setup&&p!==$('qpass2').value)throw new Error(t('كلمتين السر مش زي بعض.'));const d=await qapi(setup?'/admin/setup':'/admin/login',{passcode:p});qsetTok(d.token);Q.configured=true;const l=await qapi('/library',null,d.token);Q.lib=l.quizzes;Q.view='lib';qrender()}catch(e){error(e)}};
+ $('qauth').onclick=go;$('qpass').onkeydown=e=>{if(e.key==='Enter'&&!setup)go()}}
+function fmtDate(ts){try{return new Date(ts).toLocaleDateString(lang==='ar'?'ar-EG':'en-GB')}catch{return''}}
+function typeName(x){return t(x==='mc'?'اختيار من متعدد':x==='spot'?'اكتشف الغلطة':'سحابة كلمات')}
+function libView(r){
+ r.innerHTML='<span class="eyebrow">'+t('كويز')+'</span><div class="qrow between"><h2>'+t('مكتبة الكويزات')+' ('+Q.lib.length+')</h2><button id="qnew">+ '+t('كويز جديد')+'</button></div>'
+ +(Q.host?'<div class="notice"><p>'+t('عندك لعبة شغالة')+' · <bdi dir="ltr">'+Q.host.code+'</bdi></p><button class="secondary" id="qresume">'+t('ارجع للعبة')+'</button></div>':'')
+ +'<div id="qlist">'+(Q.lib.length?Q.lib.map(x=>'<div class="qitem" data-id="'+esc(x.id)+'"><span><b dir="auto">'+esc(x.title)+'</b><small>'+x.count+' '+t('سؤال')+' · '+x.types.map(typeName).join('، ')+' · '+t('آخر تعديل')+' '+fmtDate(x.updated)+'</small></span><span class="qrow"><button data-a="run">'+t('تشغيل')+'</button><button class="secondary" data-a="edit">'+t('تعديل')+'</button><button class="secondary" data-a="dup">'+t('نسخ')+'</button><button class="secondary" data-a="csv">CSV</button><button class="secondary qbtn-danger" data-a="del">'+t('حذف')+'</button></span></div>').join(''):'<p class="muted">'+t('مفيش كويزات لسه. اعمل أول كويز.')+'</p>')+'</div>'
+ +'<div class="qrow" style="margin-top:18px"><label class="btn secondary" style="margin:0">'+t('استيراد من ملف Excel (CSV)')+'<input id="qfile" type="file" accept=".csv,text/csv" hidden></label><button class="secondary" id="qtpl">'+t('قالب جاهز')+'</button><button class="secondary" id="qchg">'+t('تغيير كلمة السر')+'</button><button class="secondary" id="qout">'+t('خروج')+'</button></div><p class="muted">'+t('الكويزات بتتحفظ وتفضل موجودة لحد ما تمسحها.')+'</p>';
+ $('qnew').onclick=()=>{Q.draft={title:'',questions:[qblank('mc')]};Q.draftId=null;Q.view='edit';qrender()};
+ if($('qresume'))$('qresume').onclick=()=>{Q.view='host';Q.sig='';startHostPoll()};
+ $('qlist').onclick=async e=>{const b=e.target.closest('button[data-a]');if(!b)return;const id=b.closest('.qitem').dataset.id,a=b.dataset.a;try{
+  if(a==='del'){if(!confirm(t('تمسح الكويز ده نهائياً؟')))return;await qapi('/library/delete',{id},Q.tok);await qreloadLib();return}
+  const d=await qapi('/library/'+id,null,Q.tok);
+  if(a==='edit'){Q.draft=d.quiz;Q.draftId=id;Q.view='edit';qrender()}
+  else if(a==='dup'){const c={...d.quiz,title:d.quiz.title+' (2)'};await qapi('/library/save',{quiz:c},Q.tok);await qreloadLib()}
+  else if(a==='csv')qdownload(toCSV(d.quiz),d.quiz.title+'.csv');
+  else if(a==='run'){Q.launch={id,title:d.quiz.title,teams:0};Q.view='launch';qrender()}}catch(er){qerr(er)}};
+ $('qfile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const q=fromCSV(await f.text());Q.draft=q;Q.draftId=null;Q.view='edit';qrender();$('globalError').textContent=''}catch(er){error(er)}};
+ $('qtpl').onclick=()=>qdownload(toCSV({title:'Template',questions:[{type:'mc',text:'Question?',options:['A','B','C','D'],correct:0,time:20},{type:'spot',text:'Find the mistake',options:['Line 1','Line 2','Line 3'],correct:1,time:20},{type:'cloud',text:'One word for...',time:30}]}),'quiz-template.csv');
+ $('qout').onclick=()=>{qsetTok(null);Q.view='auth';qrender()};
+ $('qchg').onclick=async()=>{const o=prompt(t('كلمة السر'));if(!o)return;const n=prompt(t('كلمة السر')+' (new)');if(!n)return;try{const d=await qapi('/admin/change',{passcode:o,newPasscode:n});qsetTok(d.token)}catch(er){error(er)}}}
+async function qreloadLib(){const l=await qapi('/library',null,Q.tok);Q.lib=l.quizzes;Q.view='lib';qrender()}
+/* ---------- CSV ---------- */
+function qdownload(text,name){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+text],{type:'text/csv;charset=utf-8'}));a.download=name.replace(/[\\/:*?"<>|]/g,'_');document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
+const csvCell=v=>{v=String(v??'');return /[",\n;\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+function toCSV(q){const rows=[['type','question','seconds','correct_number','option1','option2','option3','option4','option5','option6']];for(const x of q.questions)rows.push([x.type,x.text,x.time,x.options?x.correct+1:'',...(x.options||[])]);return rows.map(r=>r.map(csvCell).join(',')).join('\r\n')}
+function parseCSV(text){text=text.replace(/^\ufeff/,'');const first=text.split(/\r?\n/)[0]||'';const d=[',',';','\t'].map(c=>[c,first.split(c).length]).sort((a,b)=>b[1]-a[1])[0][0];const rows=[];let row=[],cell='',q=false;for(let i=0;i<text.length;i++){const c=text[i];if(q){if(c==='"'){if(text[i+1]==='"'){cell+='"';i++}else q=false}else cell+=c}else if(c==='"')q=true;else if(c===d){row.push(cell);cell=''}else if(c==='\n'||c==='\r'){if(c==='\r'&&text[i+1]==='\n')i++;row.push(cell);rows.push(row);row=[];cell=''}else cell+=c}if(cell!==''||row.length){row.push(cell);rows.push(row)}return rows.filter(r=>r.some(x=>x.trim()))}
+function fromCSV(text){const rows=parseCSV(text);if(rows.length&&/^type$/i.test(rows[0][0].trim()))rows.shift();const questions=[];for(const r of rows){const type=(r[0]||'').trim().toLowerCase();if(!['mc','spot','cloud'].includes(type))continue;const tx=(r[1]||'').trim();if(!tx)continue;const time=Math.min(240,Math.max(5,parseInt(r[2])||20));if(type==='cloud'){questions.push({type,text:tx,time});continue}const opts=r.slice(4,4+(type==='mc'?4:6)).map(x=>x.trim()).filter(Boolean);const cor=(parseInt(r[3])||1)-1;if(opts.length<2||cor<0||cor>=opts.length)continue;questions.push({type,text:tx,options:opts,correct:cor,time,points:1000})}if(!questions.length)throw new Error(t('الملف مفيهوش أسئلة صالحة.'));return {title:'',questions:questions.slice(0,50)}}
+/* ---------- builder ---------- */
+function qcard(x,i,n){const spot=x.type==='spot',cloud=x.type==='cloud';
+ let h='<div class="qqcard" data-i="'+i+'"><div class="qrow between"><span><span class="qtag">'+(i+1)+'</span> <b>'+typeName(x.type)+'</b></span><span class="qrow"><button type="button" class="secondary" data-a="up" '+(i?'':'disabled')+' aria-label="'+t('فوق')+'">↑</button><button type="button" class="secondary" data-a="down" '+(i<n-1?'':'disabled')+' aria-label="'+t('تحت')+'">↓</button><button type="button" class="secondary qbtn-danger" data-a="rm">'+t('احذف السؤال')+'</button></span></div>'
+ +'<label>'+t(spot?'الموقف أو التعليمات':'نص السؤال')+'</label><textarea data-f="text" dir="auto" maxlength="300" style="min-height:70px">'+esc(x.text)+'</textarea>';
+ if(!cloud){h+='<p class="muted">'+t(spot?'اختار السطر الغلط':'اختار الإجابة الصح')+'</p>';x.options.forEach((o,k)=>{h+='<div class="qopt"><input type="radio" name="c'+i+'" data-f="correct" data-k="'+k+'" '+(x.correct===k?'checked':'')+' aria-label="'+t('اختار الإجابة الصح')+'"><input type="text" data-f="opt" data-k="'+k+'" dir="auto" maxlength="'+(spot?200:120)+'" placeholder="'+t(spot?'سطر في المحادثة':'اختيار')+' '+(k+1)+'" value="'+esc(o)+'">'+(x.options.length>2?'<button type="button" class="secondary" data-a="rmopt" data-k="'+k+'" aria-label="x">✕</button>':'')+'</div>'});
+  if(x.options.length<(spot?6:4))h+='<button type="button" class="secondary" data-a="addopt">+ '+t(spot?'إضافة سطر':'إضافة اختيار')+'</button>'}
+ h+='<div class="qrow" style="margin-top:10px"><label style="margin:0">'+t('الوقت بالثواني')+'</label><input type="number" data-f="time" min="5" max="240" value="'+x.time+'" style="width:100px"></div></div>';return h}
+function editView(r){const d=Q.draft;
+ r.innerHTML='<span class="eyebrow">'+t('كويز')+'</span><div class="qglass"><label for="qtitle">'+t('اسم الكويز')+'</label><input id="qtitle" dir="auto" maxlength="80" value="'+esc(d.title)+'"><div id="qcards">'+d.questions.map((x,i)=>qcard(x,i,d.questions.length)).join('')+'</div>'
+ +'<p class="muted">'+t('أضف سؤال')+'</p><div class="qrow"><button type="button" class="secondary" data-add="mc">+ '+t('اختيار من متعدد')+'</button><button type="button" class="secondary" data-add="spot">+ '+t('اكتشف الغلطة')+'</button><button type="button" class="secondary" data-add="cloud">+ '+t('سحابة كلمات')+'</button></div>'
+ +'<div class="actions"><button id="qsave">'+t('احفظ الكويز')+'</button><button class="secondary" id="qcsv">'+t('تصدير CSV')+'</button><button class="secondary" id="qcancel">'+t('إلغاء')+'</button></div></div>';
+ $('qtitle').oninput=e=>d.title=e.target.value;
+ const cards=$('qcards');
+ cards.oninput=e=>{const c=e.target.closest('.qqcard');if(!c)return;const x=d.questions[+c.dataset.i],f=e.target.dataset.f;if(f==='text')x.text=e.target.value;else if(f==='opt')x.options[+e.target.dataset.k]=e.target.value;else if(f==='time')x.time=Math.max(5,Math.min(240,parseInt(e.target.value)||20))};
+ cards.onchange=e=>{const c=e.target.closest('.qqcard');if(c&&e.target.dataset.f==='correct')d.questions[+c.dataset.i].correct=+e.target.dataset.k};
+ cards.onclick=e=>{const b=e.target.closest('button[data-a]');if(!b)return;const i=+b.closest('.qqcard').dataset.i,x=d.questions[i],a=b.dataset.a;
+  if(a==='rm')d.questions.splice(i,1);else if(a==='up')[d.questions[i-1],d.questions[i]]=[d.questions[i],d.questions[i-1]];else if(a==='down')[d.questions[i+1],d.questions[i]]=[d.questions[i],d.questions[i+1]];
+  else if(a==='addopt')x.options.push('');else if(a==='rmopt'){const k=+b.dataset.k;x.options.splice(k,1);if(x.correct>=x.options.length||x.correct>k)x.correct=Math.max(0,x.correct>k?x.correct-1:0)}
+  editView($('quizRoot'))};
+ r.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>{d.questions.push(qblank(b.dataset.add));editView(r);window.scrollTo(0,document.body.scrollHeight)});
+ $('qcancel').onclick=()=>{Q.view='lib';qrender()};$('qcsv').onclick=()=>qdownload(toCSV(d),(d.title||'quiz')+'.csv');
+ $('qsave').onclick=async()=>{try{if(!d.title.trim())throw new Error(t('اكتب اسم الكويز.'));if(!d.questions.length)throw new Error(t('أضف سؤال واحد على الأقل.'));
+  if(d.questions.some(x=>!x.text.trim()))throw new Error(t('اكتب نص كل سؤال.'));if(d.questions.some(x=>x.options&&x.options.some(o=>!o.trim())))throw new Error(t('كمّل اختيارات كل سؤال.'));
+  const res=await qapi('/library/save',{id:Q.draftId,quiz:d},Q.tok);await qreloadLib();$('globalError').textContent=''}catch(e){qerr(e)}}}
+/* ---------- launch ---------- */
+function launchView(r){const L=Q.launch;r.innerHTML='<span class="eyebrow">'+t('كويز')+'</span><h2 dir="auto">'+esc(L.title)+'</h2><div class="qglass"><div class="mode-buttons"><button class="secondary" id="qsolo" aria-pressed="'+(L.teams===0)+'">'+t('كل واحد لوحده')+'</button><button class="secondary" id="qteams" aria-pressed="'+(L.teams>0)+'">'+t('فرق')+'</button></div>'+(L.teams>0?'<label for="qn">'+t('عدد الفرق')+'</label><select id="qn" style="font:inherit;padding:10px;border-radius:8px">'+[2,3,4,5,6].map(n=>'<option '+(n===L.teams?'selected':'')+'>'+n+'</option>').join('')+'</select>':'')+'<div class="actions"><button id="qgo">'+t('ابدأ اللوبي')+'</button><button class="secondary" id="qback">'+t('إلغاء')+'</button></div></div>';
+ $('qsolo').onclick=()=>{L.teams=0;launchView(r)};$('qteams').onclick=()=>{L.teams=L.teams||2;launchView(r)};if($('qn'))$('qn').onchange=e=>L.teams=+e.target.value;$('qback').onclick=()=>{Q.view='lib';qrender()};
+ $('qgo').onclick=async()=>{try{const d=await qapi('/game/create',{quizId:L.id,teams:L.teams},Q.tok);Q.host={code:d.code,token:d.token,title:L.title};qhostSave();Q.view='host';Q.sig='';Q.gs=null;Q.report=null;startHostPoll()}catch(e){qerr(e)}}}
+/* ---------- host game ---------- */
+function startHostPoll(){qstop();hostTick();Q.poll=setInterval(()=>{if(role!=='quiz'){qstop();return}if(!document.hidden)hostTick()},1500);qtimerLoop()}
+async function hostTick(){if(!Q.host)return;try{const s=await qapi('/game/'+Q.host.code+'/state',null,Q.host.token);Q.off=s.serverNow-Date.now();Q.gs=s;
+  if(s.phase==='ended'&&!Q.report&&!Q.reporting){Q.reporting=true;try{Q.report=await qapi('/game/'+Q.host.code+'/report',null,Q.host.token)}catch{}Q.reporting=false}
+  const sig=[s.phase,s.qi,s.answered,s.playerCount,s.state,!!Q.report,lang].join('|');if(sig!==Q.sig){Q.sig=sig;qrender()}}catch(e){if(/الكود غير صحيح/.test(e.message)){Q.host=null;qhostSave();qstop();Q.view=Q.tok?'lib':'auth';qrender()}}}
+function qtimerLoop(){clearInterval(Q.tl);Q.tl=setInterval(()=>{const s=Q.gs;if(!s||!['quiz','quizPlay'].includes(role))return;const el=document.getElementById('qtime');if(el&&s.phase==='answering'){const r=qrem(s);el.textContent=r;const b=document.getElementById('qtbar');if(b){const tot=Math.max(1,(s.qEnd-s.qStart)/1000);b.style.width=Math.max(0,Math.min(100,100*r/tot))+'%'}if(r===0&&!Q.refetch){Q.refetch=true;setTimeout(()=>{Q.refetch=false;role==='quiz'?hostTick():playTick()},500)}}},250)}
+function optCls(i){return 'c'+(i%6)}
+function lbHtml(s,meName){return '<div class="qlb">'+(s.leaderboard||[]).map(p=>'<div class="r'+(meName&&p.name===meName?' me':'')+'"><span>'+p.rank+'. <bdi dir="auto">'+esc(p.name)+'</bdi>'+(s.teams?' <small class="qbadge">'+t('الفريق')+' '+p.team+'</small>':'')+'</span><span>'+p.score+'</span></div>').join('')+'</div>'}
+function teamHtml(s){return s.teamBoard?'<h3>'+t('ترتيب الفرق')+'</h3><div class="qlb">'+s.teamBoard.map((x,i)=>'<div class="r"><span>'+(i+1)+'. '+t('الفريق')+' '+x.team+' <small class="qbadge">'+x.members+' '+t('عضو')+'</small></span><span>'+x.score+'</span></div>').join('')+'</div>':''}
+function cloudHtml(words){if(!words||!words.length)return'';const mx=Math.max(...words.map(w=>w.n));const cols=['#E60000','#30242a','#b3001b','#7a6068'];return '<div class="qcloud" dir="auto">'+words.map((w,i)=>'<span style="font-size:'+Math.round(16+34*w.n/mx)+'px;font-weight:'+(w.n>1?900:700)+';color:'+cols[i%4]+'">'+esc(w.word)+'</span>').join('')+'</div>'}
+function podiumHtml(lb){const a=lb||[];const b=(i)=>a[i]?'<bdi dir="auto">'+esc(a[i].name)+'</bdi><br>'+a[i].score:'';return '<div class="qpod"><div class="p2">2<br>'+b(1)+'</div><div class="p1">1<br>'+b(0)+'</div><div class="p3">3<br>'+b(2)+'</div></div>'}
+function hostView(r){const s=Q.gs;if(!s){r.innerHTML='<p class="muted">…</p>';return}
+ const head='<div class="qrow between"><span class="qtag dark" dir="ltr">'+s.code+'</span><span class="qtag">'+esc(Q.host.title||s.title)+'</span></div>';
+ if(s.phase==='lobby'){const u=location.origin+joinPath+'?code='+s.code+'&lang='+lang;
+  r.innerHTML=head+'<div class="qglass qcenter"><p>'+t('ادخل على الرابط واكتب الكود')+'</p><div class="qcode">'+s.code+'</div><img id="qqr" alt="QR" width="200" height="200" src="'+apiOrigin+'/qr?code='+s.code+'&lang='+lang+(pagesHost?'&frontend=pages':'')+'" style="background:#fff;border-radius:12px"><p class="muted" dir="ltr">'+esc(u)+'</p><h3>'+(s.playerCount||0)+' '+t('انضموا')+'</h3><div class="qchips">'+(s.players||[]).map(p=>'<span class="qchip" dir="auto">'+esc(p.name)+(s.teams?' · '+p.team:'')+'</span>').join('')+'</div><p class="muted">'+((s.playerCount||0)?'':t('استنى المتدربين يدخلوا…'))+'</p><div class="actions" style="justify-content:center"><button id="qstart" '+(s.playerCount?'':'disabled')+'>'+t('ابدأ الكويز')+'</button><button class="secondary" id="qleave">'+t('رجوع للمكتبة')+'</button></div></div>';
+  $('qstart').onclick=()=>hostAct({action:'start'});$('qleave').onclick=()=>{qstop();Q.view='lib';qrender()};return}
+ if(s.phase==='answering'||s.phase==='reveal'){const q=s.q,rev=s.phase==='reveal',cloud=q.type==='cloud';let body='';
+  if(!cloud)body='<div class="qans">'+q.options.map((o,i)=>'<div class="qa '+optCls(i)+(rev&&i===q.correct?' right':'')+(rev&&i!==q.correct?' dim':'')+'"><span class="sym">'+SYM[i]+'</span><span dir="auto" style="flex:1">'+esc(o)+'</span>'+(rev?'<span class="cnt">'+(s.counts?s.counts[i]:0)+'</span>':(i===q.correct?'<span>✓</span>':''))+'</div>').join('')+'</div>';
+  else if(rev)body=cloudHtml(s.words);
+  r.innerHTML=head+'<div class="qglass"><div class="qrow between"><span class="qtag">'+(s.qi+1)+' / '+s.total+'</span>'+(rev?'<span class="qtag dark">'+(s.answered||0)+' '+t('أجاوبوا')+'</span>':'<div class="qtimer" id="qtime">'+qrem(s)+'</div><span class="qtag dark">'+(s.answered||0)+'/'+(s.playerCount||0)+' '+t('أجاوبوا')+'</span>')+'</div>'+(rev?'':'<div class="qbar"><i id="qtbar" style="width:100%"></i></div>')+'<div class="qq" dir="auto">'+esc(q.text)+'</div>'+body
+  +(rev?'<h3>'+t('الترتيب')+'</h3>'+lbHtml(s)+teamHtml(s):'')+'<div class="actions">'+(rev?'<button id="qnext">'+t(s.qi+1>=s.total?'اعرض النتيجة النهائية':'السؤال التالي')+'</button>':'<button class="secondary" id="qrev">'+t('اعرض النتيجة دلوقتي')+'</button>')+'</div></div>';
+  if(rev)$('qnext').onclick=()=>hostAct({action:'next',qi:s.qi});else $('qrev').onclick=()=>hostAct({action:'reveal'});return}
+ if(s.phase==='ended'){const rp=Q.report;r.innerHTML=head+'<div class="qglass"><h2 class="qcenter">'+t('النتيجة النهائية')+'</h2>'+podiumHtml(s.leaderboard)+lbHtml(s)+teamHtml(s)+'</div>'
+  +'<div class="qglass"><h2>'+t('تقرير الجلسة')+'</h2>'+(rp?rp.questions.map(q=>'<div class="qitem" style="display:block"><b dir="auto">'+(q.index+1)+'. '+esc(q.text)+'</b>'+(q.type==='cloud'?'<div>'+cloudHtml(q.words.slice(0,40))+'</div>':'<div class="qbar"><i style="width:'+q.pct+'%'+(q.pct<50?';background:#30242a':'')+'"></i></div><small>'+q.pct+'% '+t('صح')+(q.pct<50?' · ⚠ '+t('محتاج مراجعة'):'')+'</small>'+(q.wrong.length?'<small>'+t('اللي غلطوا')+': '+q.wrong.map(w=>'<bdi dir="auto">'+esc(w.name)+'</bdi>').join('، ')+'</small>':'')+(q.missing.length?'<small>'+t('ماجاوبوش')+': '+q.missing.map(w=>'<bdi dir="auto">'+esc(w)+'</bdi>').join('، ')+'</small>':''))+'</div>').join(''):'<p class="muted">'+t('جاري تجهيز التقرير…')+'</p>')
+  +'<div class="actions"><button id="qexp" '+(rp?'':'disabled')+'>'+t('تصدير النتايج CSV')+'</button><button class="secondary" id="qdone">'+t('رجوع للمكتبة')+'</button></div></div>';
+  $('qexp').onclick=()=>{if(!Q.report)return;qdownload(reportCSV(Q.report),(Q.report.title||'results')+'-results.csv')};
+  $('qdone').onclick=()=>{qstop();Q.host=null;qhostSave();Q.gs=null;Q.report=null;Q.view='lib';openQuiz()}}}
+function reportCSV(rp){const L=[['rank','name','team','score']];for(const p of rp.players)L.push([p.rank,p.name,rp.teams?p.team:'',p.score]);L.push([]);L.push(['question','type','answered','correct_percent','wrong_names']);for(const q of rp.questions)L.push([q.text,q.type,q.answered,q.type==='cloud'?'':q.pct,q.type==='cloud'?q.words.map(w=>w.word+'×'+w.n).join(' | '):q.wrong.map(w=>w.name).join(' | ')]);return L.map(r=>r.map(csvCell).join(',')).join('\r\n')}
+async function hostAct(b){try{await qapi('/game/'+Q.host.code+'/host',b,Q.host.token);Q.sig='';hostTick()}catch(e){qerr(e)}}
+/* ---------- player ---------- */
+async function quizTryJoin(){const code=$('joinCode').value.trim().replace(/[٠-٩]/g,c=>String(c.charCodeAt(0)-1632));if(!/^\d{6}$/.test(code))return join();
+ let s;try{s=await qapi('/game/'+code+'/state?client='+encodeURIComponent(client()))}catch(e){return join()}
+ Q.pl={code,name:null};Q.gs=s;Q.off=s.serverNow-Date.now();Q.sig='';let nm=null;try{nm=sessionStorage.getItem('quiz.name.'+code)}catch{}
+ show('quizPlay');if(s.me){Q.pl.name=s.me.name;startPlayPoll();playRender()}else if(nm&&s.state!=='ended'){await playJoin(nm)}else playRender()}
+async function playJoin(name){try{const d=await qapi('/game/'+Q.pl.code+'/join',{client:client(),name});Q.pl.name=d.name;try{sessionStorage.setItem('quiz.name.'+Q.pl.code,d.name)}catch{}Q.sig='';startPlayPoll();await playTick()}catch(e){error(e);playRender()}}
+function startPlayPoll(){qstop();Q.poll=setInterval(()=>{if(role!=='quizPlay'){qstop();return}if(!document.hidden)playTick()},1500);qtimerLoop()}
+async function playTick(){try{const s=await qapi('/game/'+Q.pl.code+'/state?client='+encodeURIComponent(client()));Q.off=s.serverNow-Date.now();const prev=Q.gs;Q.gs=s;if(prev&&(prev.qi!==s.qi||prev.phase!==s.phase))Q.sel=-1;const sig=[s.phase,s.qi,s.me&&s.me.answered,s.me&&s.me.score,s.me&&s.me.rank,lang].join('|');if(sig!==Q.sig){Q.sig=sig;playRender()}}catch(e){}}
+async function playSend(body){try{await qapi('/game/'+Q.pl.code+'/answer',{client:client(),qi:Q.gs.qi,...body});Q.sig='';await playTick()}catch(e){error(e);await playTick()}}
+function playRender(){if(role!=='quizPlay')return;const r=$('quizPlayRoot'),s=Q.gs;
+ const head='<div class="qrow between"><span class="qtag">'+esc(s.title)+'</span>'+(s.me?'<span class="qtag dark" dir="auto">'+esc(s.me.name)+' · '+s.me.score+'</span>':'')+'</div>';
+ if(!s.me){r.innerHTML=head+'<div class="qglass"><h2>'+t('اكتب اسمك')+'</h2><input id="qname" dir="auto" maxlength="40" placeholder="'+t('اكتب اسمك')+'" autocomplete="off"><div class="actions"><button id="qjoin">'+t('ادخل الكويز')+'</button></div></div>';
+  const go=()=>{const v=$('qname').value.trim();if(v)playJoin(v)};$('qjoin').onclick=go;$('qname').onkeydown=e=>{if(e.key==='Enter')go()};return}
+ if(s.phase==='lobby'){r.innerHTML=head+'<div class="qglass qcenter"><div class="qbig">🎮</div><h2>'+t('أنت جوّه. استنى المدرب يبدأ.')+'</h2>'+(s.teams?'<p><b>'+t('فريقك')+': '+s.me.team+'</b></p>':'')+'<p class="muted">'+(s.playerCount||0)+' '+t('انضموا')+'</p></div>';return}
+ if(s.phase==='answering'){const q=s.q,a=s.me.answered;let body='';
+  if(q.type==='mc')body='<div class="qans">'+q.options.map((o,i)=>'<button class="qa '+optCls(i)+(s.me.choice===i?' picked':'')+'" data-i="'+i+'" '+(a?'disabled':'')+'><span class="sym">'+SYM[i]+'</span><span dir="auto">'+esc(o)+'</span></button>').join('')+'</div>';
+  else if(q.type==='spot')body=q.options.map((o,i)=>'<button class="qbub'+((a?s.me.choice:Q.sel)===i?' picked':'')+'" data-i="'+i+'" '+(a?'disabled':'')+' dir="auto">'+esc(o)+'</button>').join('')+(a?'':'<div class="actions"><button id="qsend" '+(Q.sel>=0?'':'disabled')+'>'+t('ابعت الإجابة')+'</button></div>');
+  else body=a?'<p class="qcenter"><b dir="auto">'+esc(s.me.text||'')+'</b></p>':'<input id="qword" dir="auto" maxlength="30" placeholder="'+t('اكتب كلمة')+'" autocomplete="off"><div class="actions"><button id="qsend">'+t('ابعت')+'</button></div>';
+  r.innerHTML=head+'<div class="qglass"><div class="qrow between"><span class="qtag">'+(s.qi+1)+' / '+s.total+'</span><div class="qtimer" id="qtime">'+qrem(s)+'</div></div><div class="qbar"><i id="qtbar" style="width:100%"></i></div><div class="qq" dir="auto">'+esc(q.text)+'</div>'+body+(a?'<p class="qcenter muted">'+t('اتسجلت إجابتك. استنى باقي القاعة…')+'</p>':'')+'</div>';
+  if(!a){if(q.type==='mc')r.querySelectorAll('button.qa').forEach(b=>b.onclick=()=>{r.querySelectorAll('button.qa').forEach(x=>x.disabled=true);playSend({choice:+b.dataset.i})});
+   else if(q.type==='spot'){r.querySelectorAll('.qbub').forEach(b=>b.onclick=()=>{Q.sel=+b.dataset.i;r.querySelectorAll('.qbub').forEach(x=>x.classList.toggle('picked',x===b));$('qsend').disabled=false});$('qsend').onclick=()=>{if(Q.sel>=0){$('qsend').disabled=true;playSend({choice:Q.sel})}}}
+   else{const go=()=>{const v=$('qword').value.trim();if(v){$('qsend').disabled=true;playSend({text:v})}};$('qsend').onclick=go;$('qword').onkeydown=e=>{if(e.key==='Enter')go()}}}return}
+ if(s.phase==='reveal'){const m=s.me,q=s.q,cloud=q.type==='cloud';let top;
+  if(cloud)top='<div class="qbig">☁️</div>'+cloudHtml(s.words);
+  else if(!m.answered)top='<div class="qbig">⏱</div><h2 class="qcenter qno">'+t('وقتك خلص')+'</h2>';
+  else top='<div class="qbig '+(m.ok?'qok':'qno')+'">'+(m.ok?'✓':'✗')+'</div><h2 class="qcenter '+(m.ok?'qok':'qno')+'">'+t(m.ok?'إجابة صح!':'إجابة غلط')+(m.ok?' +'+m.points:'')+'</h2>';
+  const right=!cloud?'<p class="qcenter">'+t('الإجابة الصح')+': <b dir="auto">'+esc(q.options[q.correct])+'</b></p>':'';
+  r.innerHTML=head+'<div class="qglass qcenter">'+top+right+'<p>'+t('نقاطك')+': <b>'+m.score+'</b> · '+t('مركزك')+': <b>'+(m.rank||'-')+'</b>'+(s.teams?' · '+t('ترتيب فريقك')+': <b>'+(m.teamRank||'-')+'</b>':'')+'</p><p class="muted">'+t('استنى السؤال الجاي…')+'</p></div>'+'<div class="qglass"><h3>'+t('الترتيب')+'</h3>'+lbHtml(s,m.name)+'</div>';return}
+ if(s.phase==='ended'){const m=s.me;r.innerHTML=head+'<div class="qglass qcenter"><h2>'+t('النتيجة النهائية')+'</h2>'+podiumHtml(s.leaderboard)+'<p>'+t('مركزك')+': <b>'+(m.rank||'-')+'</b> · '+t('نقاطك')+': <b>'+m.score+'</b>'+(s.teams?' · '+t('ترتيب فريقك')+': <b>'+(m.teamRank||'-')+'</b>':'')+'</p><p class="muted">'+t('الكويز خلص. شكراً على المشاركة!')+'</p></div>'+teamHtml(s)}}
+/* ---------- wiring ---------- */
+$('quizTab').onclick=openQuiz;
+$('joinButton').onclick=quizTryJoin;
+{const _sl=setLanguage;setLanguage=function(v){_sl(v);Q.sig='';if(role==='quiz')qrender();if(role==='quizPlay'&&Q.gs)playRender()}}
