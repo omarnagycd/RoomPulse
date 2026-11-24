@@ -107,3 +107,25 @@ Hosted Wheel checks passed in AR/EN and light/dark at 320/390/1280 widths, inclu
 The owner-approved red/white glass system covers home, preparation, bank, participation, results, ranking, timer, wheel, language/theme controls and validation. Both themes use translucent panels, high-contrast text, red actions and a white QR surface. It is a CSS-only change inside index.html, generated from the reference stylesheet liquid-glass.css; backend.js and database schema were not changed. Rebuild remains python rebuild.py. Reduced-motion and reduced-transparency preferences are handled. Live release: aad7137b-76bd-4a1d-a1b6-4aebbf4488d1.
 
 The restyle passed bilingual 50-bank selection and poll/text/QR/manual-code tests, wheel behavior, ranking/rounds/privacy/auth/timer cutoff and all timer/theme regressions locally. Ranking/rounds/auth/privacy/cutoff were rechecked on the live release. QR tests now wait for image decode before screenshotting. Screens were checked at 320/390/1280, both languages/themes. Tests create short-lived QA sessions, not persistent user-facing demo content.
+
+## Quiz mode (added 2026-11-24)
+
+A Kahoot-style live quiz on top of the existing RoomPulse tabs. Nothing existing was changed. It lives in a new "Quiz" tab and under `/api/quiz/*`, with its own D1 tables (`quiz_*`). No accounts. The host page uses a passcode that the owner types on first use; only a salted hash is stored. The passcode is never in the source or in chat.
+
+Numbered feature list (Quiz):
+1. Admin quiz library behind a host passcode (set on first run): add, edit, duplicate, delete, reuse. Quizzes stay saved until deleted.
+2. Quiz builder with three question types: Multiple Choice (2-4 choices), Spot the Mistake (2-6 chat lines, pick the wrong one), Word Cloud (everyone types a word, live cloud).
+3. Per-question timer (5-240 s). Points for correct answers, higher for faster answers (1000 down to 500).
+4. Join with code or QR from the existing join page. Participants enter a name. No account.
+5. Live big-screen host view with answered count and countdown; host can show results early. Results show automatically when everyone has answered or time ends.
+6. Leaderboard after every question and a top-3 podium at the end.
+7. Teams mode: 2-6 teams, players are balanced automatically, team standings use the average score per member.
+8. Trainer report after the session: percent correct per question, who answered wrong, who did not answer, word-cloud words. Export to CSV (opens in Excel).
+9. Quiz import and export as CSV (UTF-8, opens in Excel) plus a template download.
+10. Arabic and English everywhere, mobile and desktop, dark and light mode, same red/white liquid-glass look.
+
+Not included yet (not chosen): streak, double points, kick player, lobby music, company logo, polls, type-answer, true/false, match-it, last-one-standing, self-paced mode, accounts/SSO, AI generation.
+
+Limits: free Cloudflare plan. Players poll about every 1.5 seconds, so several large sessions in one day can hit the free request quota. Finished games and their reports are kept 3 days. Maximum 200 players per game, 100 saved quizzes, 50 questions per quiz.
+
+Build: `python rebuild.py` regenerates worker.js from index.html and backend.js. `quiz/` holds the quiz module sources and tests (`api_test.mjs`, `e2e.py`); `build_quiz.py` injects the client module into a clean index.html. Backend changes need a separately authorized Cloudflare deployment.
