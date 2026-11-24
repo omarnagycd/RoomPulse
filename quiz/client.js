@@ -1,5 +1,5 @@
 /* ===== QUIZ MODULE (client) ===== */
-Object.assign(EN,{"اختار شخصيتك":"Pick your character","تحميل Excel":"Download Excel",
+Object.assign(EN,{"رفع Excel أو CSV":"Upload Excel or CSV","الملف هيحل محل الأسئلة الحالية. متأكد؟":"The file will replace the current questions. Sure?","اختار شخصيتك":"Pick your character","تحميل Excel":"Download Excel",
 "كويز":"Quiz","مكتبة الكويزات":"Quiz library","كويز جديد":"New quiz","استيراد من ملف Excel (CSV)":"Import from Excel (CSV)","قالب جاهز":"Template","تغيير كلمة السر":"Change passcode","خروج":"Log out",
 "أول مرة؟ اختار كلمة سر للصفحة دي. هتكتبها أنت هنا بنفسك، ومش هتتبعت في أي شات.":"First time here. Choose a passcode for this page. You type it yourself, it is never sent in chat.",
 "كلمة السر":"Passcode","تأكيد كلمة السر":"Confirm passcode","احفظ كلمة السر":"Save passcode","ادخل":"Enter","كلمتين السر مش زي بعض.":"The two passcodes do not match.",
@@ -141,7 +141,7 @@ function qcard(x,i,n){const spot=x.type==='spot',cloud=x.type==='cloud';
 function editView(r){const d=Q.draft;
  r.innerHTML='<span class="eyebrow">'+t('كويز')+'</span><div class="qglass"><label for="qtitle">'+t('اسم الكويز')+'</label><input id="qtitle" dir="auto" maxlength="80" value="'+esc(d.title)+'"><div class="qrow" style="margin:10px 0"><label style="margin:0" for="qallp">'+t('نقاط كل الأسئلة')+'</label><input type="number" id="qallp" min="1" max="100" step="1" value="1" style="width:90px"><button type="button" class="secondary" id="qapplyp">'+t('طبّق على الكل')+'</button><button type="button" class="secondary" id="qresetp">'+t('رجّع الكل لـ 1')+'</button></div><div id="qcards">'+d.questions.map((x,i)=>qcard(x,i,d.questions.length)).join('')+'</div>'
  +'<p class="muted">'+t('أضف سؤال')+'</p><div class="qrow"><button type="button" class="secondary" data-add="mc">+ '+t('اختيار من متعدد')+'</button><button type="button" class="secondary" data-add="spot">+ '+t('اكتشف الغلطة')+'</button><button type="button" class="secondary" data-add="cloud">+ '+t('سحابة كلمات')+'</button></div>'
- +'<div class="actions"><button id="qsave">'+t('احفظ الكويز')+'</button><button class="secondary" id="qxlsx">'+t('تحميل Excel')+'</button><button class="secondary" id="qcsv">'+t('تصدير CSV')+'</button><button class="secondary" id="qcancel">'+t('إلغاء')+'</button></div></div>';
+ +'<div class="actions"><button id="qsave">'+t('احفظ الكويز')+'</button><button class="secondary" id="qxlsx">'+t('تحميل Excel')+'</button><button class="secondary" id="qcsv">'+t('تصدير CSV')+'</button><label class="btn secondary" style="margin:0">'+t('رفع Excel أو CSV')+'<input id="qfile2" type="file" accept=".xlsx,.csv,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden></label><button class="secondary" id="qtpl2">'+t('تحميل قالب Excel')+'</button><button class="secondary" id="qcancel">'+t('إلغاء')+'</button></div></div>';
  $('qtitle').oninput=e=>d.title=e.target.value;
  const setAll=v=>{v=Math.max(1,Math.min(100,parseInt(v)||1));for(const x of d.questions)if(x.type!=='cloud')x.points=v;editView(r)};$('qapplyp').onclick=()=>setAll($('qallp').value);$('qresetp').onclick=()=>setAll(1);
  const cards=$('qcards');
@@ -152,7 +152,7 @@ function editView(r){const d=Q.draft;
   else if(a==='addopt')x.options.push('');else if(a==='rmopt'){const k=+b.dataset.k;x.options.splice(k,1);if(x.correct>=x.options.length||x.correct>k)x.correct=Math.max(0,x.correct>k?x.correct-1:0)}
   editView($('quizRoot'))};
  r.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>{d.questions.push(qblank(b.dataset.add));editView(r);window.scrollTo(0,document.body.scrollHeight)});
- $('qcancel').onclick=()=>{Q.view='lib';qrender()};$('qxlsx').onclick=()=>qdlBlob(xlsxBuild(quizSheets(d)),(d.title||'quiz')+'.xlsx');$('qcsv').onclick=()=>qdownload(toCSV(d),(d.title||'quiz')+'.csv');
+ $('qcancel').onclick=()=>{Q.view='lib';qrender()};$('qtpl2').onclick=()=>qdlBlob(xlsxBuild(qtemplateSheets()),'quiz-template.xlsx');$('qfile2').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const q=/\.xlsx$/i.test(f.name)?fromRows(await xlsxRows(f)):fromCSV(await f.text());if(d.questions&&d.questions.length&&!confirm(t('الملف هيحل محل الأسئلة الحالية. متأكد؟')))return;Q.draft=q;Q.draftId=null;Q.view='edit';qrender();$('globalError').textContent=''}catch(er){error(er)}};$('qxlsx').onclick=()=>qdlBlob(xlsxBuild(quizSheets(d)),(d.title||'quiz')+'.xlsx');$('qcsv').onclick=()=>qdownload(toCSV(d),(d.title||'quiz')+'.csv');
  $('qsave').onclick=async()=>{try{if(!d.title.trim())throw new Error(t('اكتب اسم الكويز.'));if(!d.questions.length)throw new Error(t('أضف سؤال واحد على الأقل.'));
   if(d.questions.some(x=>!x.text.trim()))throw new Error(t('اكتب نص كل سؤال.'));if(d.questions.some(x=>x.options&&x.options.some(o=>!o.trim())))throw new Error(t('كمّل اختيارات كل سؤال.'));
   const res=await qapi('/library/save',{id:Q.draftId,quiz:d},Q.tok);await qreloadLib();$('globalError').textContent=''}catch(e){qerr(e)}}}
