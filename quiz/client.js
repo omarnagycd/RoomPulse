@@ -219,7 +219,7 @@ async function playSend(body){if(Q.ws&&Q.ws.readyState===1){try{Q.ws.send(JSON.s
 function playRender(){if(role!=='quizPlay')return;const r=$('quizPlayRoot'),s=Q.gs;
  const head='<div class="qrow between"><span class="qtag">'+esc(s.title)+'</span>'+(s.me?'<span class="qtag dark" dir="auto">'+qav(s.me.av)+esc(s.me.name)+' · '+fmtp(s.me.score)+'</span>':'')+'</div>';
  if(!s.me){r.innerHTML=head+'<div class="qglass"><h2>'+t('اكتب اسمك')+'</h2><p class="muted">'+t('اختار شخصيتك')+'</p>'+qavPicker()+'<input id="qname" dir="auto" maxlength="40" placeholder="'+t('اكتب اسمك')+'" autocomplete="off"><div class="actions"><button id="qjoin">'+t('ادخل الكويز')+'</button></div></div>';
-  r.querySelectorAll('.qavpick').forEach(b=>b.onclick=()=>{qavSet(+b.dataset.i);r.querySelectorAll('.qavpick').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))});const go=()=>{const v=$('qname').value.trim();if(v)playJoin(v)};$('qjoin').onclick=go;$('qname').onkeydown=e=>{if(e.key==='Enter')go()};return}
+  r.querySelectorAll('.qavpick').forEach(b=>b.onclick=()=>{qavSet(+b.dataset.i);r.querySelectorAll('.qavpick').forEach(x=>x.setAttribute('aria-pressed',String(x===b)))});const go=()=>{const v=$('qname').value.trim();if(v)playJoin(v);else{qntoast(t('لازم تكتب اسمك'));$('qname').focus()}};$('qjoin').onclick=go;$('qname').onkeydown=e=>{if(e.key==='Enter')go()};return}
  if(s.phase==='lobby'){r.innerHTML=head+'<div class="qglass qcenter"><div class="qbig">🎮</div><h2>'+t('أنت جوّه. استنى المدرب يبدأ.')+'</h2>'+(s.teams?'<p><b>'+t('فريقك')+': '+s.me.team+'</b></p>':'')+'<p class="muted">'+(s.playerCount||0)+' '+t('انضموا')+'</p></div>';return}
  if(s.phase==='answering'){const q=s.q,a=s.me.answered;let body='';
   if(q.type==='mc')body='<div class="qans">'+q.options.map((o,i)=>'<button class="qa '+optCls(i)+(s.me.choice===i?' picked':'')+'" data-i="'+i+'" '+(a?'disabled':'')+'><span class="sym">'+SYM[i]+'</span><span dir="auto">'+esc(o)+'</span></button>').join('')+'</div>';
@@ -240,3 +240,5 @@ function playRender(){if(role!=='quizPlay')return;const r=$('quizPlayRoot'),s=Q.
 $('quizTab').onclick=openQuiz;
 $('joinButton').onclick=quizTryJoin;
 {const _sl=setLanguage;setLanguage=function(v){_sl(v);Q.sig='';if(role==='quiz')qrender();if(role==='quizPlay'&&Q.gs)playRender()}}
+Object.assign(EN,{"لازم تكتب اسمك":"You need to enter your name","إغلاق":"Close"});
+function qntoast(m){const o=document.getElementById('qntoast');if(o)o.remove();const d=document.createElement('div');d.id='qntoast';d.setAttribute('role','alert');const sp=document.createElement('span');sp.textContent=m;const b=document.createElement('button');b.type='button';b.className='qtx';b.textContent='\u2715';b.setAttribute('aria-label',t('إغلاق'));b.onclick=()=>d.remove();d.append(sp,b);document.body.appendChild(d);setTimeout(()=>d.remove(),3000)}
