@@ -16,8 +16,9 @@ Trainer/browser state is separate on the two addresses. Stay on one host for a s
 
 ### RoomPulse, live pilot
 
-App: https://roompulse.s21smk.workers.dev/
-Participant entry: https://roompulse.s21smk.workers.dev/join
+App (official link): https://roompulse.pages.dev/
+Participant entry: https://roompulse.pages.dev/join
+The earlier https://roompulse.s21smk.workers.dev/ link keeps working as an alternate (same app, same data).
 The earlier https://hall-live.s21smk.workers.dev/ app remains available. Both apps use the same D1 database, preserving existing sessions and replies. Use the same link throughout an active session: browser storage is separate for each hostname.
 
 ## Features
@@ -172,3 +173,5 @@ Build: `python rebuild.py` regenerates worker.js from index.html and backend.js.
 51. Terms of Use in the footer (Arabic and English): a "شروط الاستخدام" link opens a short plain-language page of terms (ownership of RoomPulse content, users responsible for what they upload, no content they do not own, as-is and no liability), with "© RoomPulse" next to it.
 52. Quiz music now plays on player phones too, during the answering phase (not only on the host screen). The speaker icon on a player phone turns the music and sound on or off.
 53. Joining a quiz without typing a name now shows a red message "لازم تكتب اسمك" (EN: You need to enter your name) with a close mark; it hides by itself after 3 seconds.
+54. Quiz podium (final results): a gold crown on 1st place, silver on 2nd and bronze on 3rd. Long names now wrap in full and the score always shows under the name (nothing is cut off).
+55. Official link is now https://roompulse.pages.dev (a Cloudflare Pages front for the same app and data). The earlier workers.dev link keeps working.
