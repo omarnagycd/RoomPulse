@@ -39,7 +39,16 @@ function watch(force){btn();const s=Q.gs,host=role==='quiz'&&Q.view==='host',pl=
  if(s.phase==='reveal'&&pl&&s.me&&s.me.answered&&s.q&&s.q.type!=='cloud'){once(s.me.ok?QS.ting:QS.buzz)}
  if(s.phase==='ended'){applause();confetti()}}
 setInterval(()=>watch(false),400);
-return {unlock,watch}})();
+let wnb=null,wh=null;
+function wbuf(){if(!wnb||wnb.sampleRate!==ctx.sampleRate){wnb=ctx.createBuffer(1,ctx.sampleRate,ctx.sampleRate);const a=wnb.getChannelData(0);for(let i=0;i<a.length;i++)a[i]=Math.random()*2-1}return wnb}
+function wtick(when,v,low){if(!ready())return;const c=ctx,t=Math.max(when,c.currentTime),r=1+(Math.random()-.5)*.1,vol=Math.min(1,v)*(.9+Math.random()*.2);
+ const s=c.createBufferSource();s.buffer=wbuf();s.playbackRate.value=1;const f=c.createBiquadFilter();f.type='bandpass';f.frequency.value=(low?2000:3200)*r;f.Q.value=1.4;const g=c.createGain();g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(.9*vol,t+.0008);g.gain.exponentialRampToValueAtTime(.0001,t+(low?.03:.014));s.connect(f);f.connect(g);g.connect(master);s.start(t,Math.random()*.5,.05);
+ const o=c.createOscillator(),og=c.createGain();o.type='triangle';o.frequency.setValueAtTime((low?620:1050)*r,t);o.frequency.exponentialRampToValueAtTime((low?430:760)*r,t+.05);og.gain.setValueAtTime(.0001,t);og.gain.exponentialRampToValueAtTime(.5*vol,t+.001);og.gain.exponentialRampToValueAtTime(.0001,t+(low?.09:.045));o.connect(og);og.connect(master);o.start(t);o.stop(t+.12)}
+function wstart(){if(!ready()||wh)return;const c=ctx,s=c.createBufferSource();s.buffer=wbuf();s.loop=true;const f=c.createBiquadFilter();f.type='lowpass';f.frequency.value=300;const g=c.createGain();g.gain.value=0;s.connect(f);f.connect(g);g.connect(master);s.start();wh={s,f,g}}
+function wspeed(w){if(!wh)return;const t=ctx.currentTime,k=Math.min(1,w/24);wh.f.frequency.setTargetAtTime(250+1300*k,t,.05);wh.g.gain.setTargetAtTime(.05*k,t,.06)}
+function wstop(){if(!wh)return;const h=wh;wh=null;try{h.g.gain.setTargetAtTime(0,ctx.currentTime,.05);h.s.stop(ctx.currentTime+.4)}catch{}}
+function wnow(){return ctx?ctx.currentTime:0}
+return {unlock,watch,wtick,wstart,wspeed,wstop,wnow,ready}})();
 /* hints */
 {const H={edit:'اكتب الأسئلة، حدّد الإجابة الصح، وبعدين احفظ.',lib:'اختار كويز وابدأه، أو اعمل واحد جديد.',launch:'اختار شكل اللعب: فردي أو فرق.'};
 const HP={lobby:'شارك الكود أو الـQR، واضغط ابدأ لما الكل يدخل.',answering:'اللاعبين بيجاوبوا دلوقتي. تقدر تعرض النتيجة بدري.',reveal:'دي الإجابة والترتيب. اضغط التالي لما تبقى جاهز.',ended:'الكويز خلص. صدّر النتايج أو ارجع للمكتبة.'};
