@@ -1,0 +1,40 @@
+/* QUIZ MODULE */
+#quiz,#quizPlay{--qa0:#E60000;--qa1:#30242a;--qa2:#b3001b;--qa3:#7a6068;--qa4:#c4455a;--qa5:#4a3a40}
+.qglass{background:var(--glass-surface,linear-gradient(140deg,#fffffff0,#ffffff85));border:1px solid var(--glass-line,#ffffffef);border-radius:20px;box-shadow:var(--glass-shadow,0 18px 50px #7b15200c);padding:20px;margin:16px 0;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.qrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.qrow.between{justify-content:space-between}
+.qitem{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;border:1px solid var(--glass-field-line,#d9b9c0);background:var(--glass-field,#ffffffb8);border-radius:14px;padding:14px 16px;margin:10px 0}
+.qitem small{display:block;color:var(--glass-muted,#6b5960)}
+.qbtn-danger{border-color:#30242a!important;color:#30242a!important;background:transparent!important}
+.qtag{display:inline-block;background:#E60000;color:#fff;border-radius:99px;padding:1px 12px;font-size:13px;font-weight:bold}
+.qtag.dark{background:#30242a}
+.qcode{font-size:clamp(40px,10vw,68px);font-weight:900;letter-spacing:8px;color:#E60000;direction:ltr;line-height:1.3}
+.qchips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.qchip{border:1px solid #E60000;color:var(--glass-accent,#B90000);border-radius:99px;padding:2px 12px;font-size:14px}
+.qq{font-size:clamp(20px,3.6vw,30px);font-weight:900;line-height:1.6;margin:14px 0}
+.qans{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:14px 0}
+.qa{border-radius:16px;padding:18px;color:#fff;font-weight:bold;font-size:18px;min-height:66px;display:flex;align-items:center;gap:12px;border:3px solid transparent;text-align:start;position:relative}
+.qa.c0{background:var(--qa0)}.qa.c1{background:var(--qa1)}.qa.c2{background:var(--qa2)}.qa.c3{background:var(--qa3)}.qa.c4{background:var(--qa4)}.qa.c5{background:var(--qa5)}
+.qa.right{border-color:#1a9c4b;box-shadow:0 0 0 3px #1a9c4b55}.qa.dim{opacity:.4}
+button.qa{cursor:pointer;width:100%;font:inherit;font-weight:bold;font-size:18px}
+button.qa:disabled{opacity:.55}
+button.qa.picked{border-color:#fff;box-shadow:0 0 0 4px #252525}
+.qa .sym{font-size:22px;min-width:26px;text-align:center}
+.qa .cnt{margin-inline-start:auto;font-size:22px}
+.qtimer{width:68px;height:68px;border-radius:50%;border:6px solid #E60000;display:grid;place-items:center;font-size:26px;font-weight:900;color:#E60000;background:var(--glass-field,#fff);direction:ltr}
+.qbar{height:10px;border-radius:6px;background:#E6000020;overflow:hidden;margin:10px 0}.qbar>i{display:block;height:100%;background:#E60000;transition:width .3s}
+.qlb .r{display:flex;justify-content:space-between;gap:10px;background:var(--glass-field,#ffffffc0);border-radius:12px;padding:10px 16px;margin:8px 0;font-weight:bold}
+.qlb .r.me{outline:2px solid #E60000}
+.qpod{direction:ltr;display:flex;gap:12px;align-items:flex-end;justify-content:center;height:250px;margin:16px 0}
+.qpod>div{flex:1;max-width:160px;border-radius:14px 14px 0 0;text-align:center;color:#fff;font-weight:900;padding:10px 6px;overflow-wrap:anywhere}
+.qpod .p1{background:#E60000;height:100%}.qpod .p2{background:#7a6068;height:70%}.qpod .p3{background:#b3001b;height:52%}
+.qcloud{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;align-items:center;padding:20px;line-height:1.3}
+.qbub{background:var(--glass-field,#fff);border:2px solid var(--glass-field-line,#d9b9c0);border-radius:16px;padding:12px 16px;margin:8px 0;width:100%;text-align:start;font:inherit;cursor:pointer;color:inherit}
+.qbub.picked{border-color:#E60000;background:#E6000014}.qbub.right{border-color:#1a9c4b;background:#eafaf0;color:#1c1c1c}.qbub.wrong{opacity:.55}
+.qqcard{border:1px solid var(--glass-field-line,#d9b9c0);border-radius:16px;padding:16px;margin:14px 0;background:var(--glass-field,#ffffff80)}
+.qopt{display:flex;gap:8px;align-items:center;margin:8px 0}.qopt input[type=radio]{width:22px;min-height:22px;flex:none}.qopt input[type=text]{flex:1}
+.qbig{font-size:64px;line-height:1.2;text-align:center}
+.qcenter{text-align:center}
+.qok{color:#1a9c4b}.qno{color:#E60000}
+.qbadge{font-size:13px;color:var(--glass-muted,#6b5960)}
+@media(max-width:560px){.qa{font-size:17px;padding:16px}.qpod{height:200px}}
