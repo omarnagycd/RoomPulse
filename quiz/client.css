@@ -117,3 +117,12 @@ header .language-switch{padding:2px!important}header .language-switch button{pad
 header .theme-toggle,header #themeToggle{padding:4px 9px!important;font-size:12px!important;min-height:0!important}
 header .section-tabs svg,header .section-tabs i{width:14px!important;height:14px!important;font-size:14px!important}
 #qmusic{position:fixed;bottom:72px;inset-inline-end:16px;z-index:50;min-height:44px;padding:0 16px;border-radius:999px;font-size:15px;font-weight:700;line-height:1;white-space:nowrap}
+
+.qlanding{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+.qlanding button{min-height:120px;border-radius:22px;font-size:22px;display:flex;align-items:center;justify-content:center}
+
+.qlanding button[aria-pressed=false]{background-image:none!important;background-color:rgba(255,255,255,.55);color:inherit;border:1px solid rgba(230,0,0,.3);opacity:.8}
+.qlanding button[aria-pressed=true]{background:#d40000!important;background-image:linear-gradient(180deg,#f23a3a,#b80000)!important;color:#fff!important;border:1px solid #b80000;opacity:1}
+.qlanding{margin-bottom:12px}.qlanding button{min-height:84px!important;font-size:19px!important}
+.qlanding{gap:8px!important;margin-bottom:10px}.qlanding button{min-height:48px!important;font-size:16px!important;border-radius:16px!important;transition:none!important}
+html[data-theme=dark] .qlanding button[aria-pressed=false]{background-color:rgba(255,255,255,.06)!important;color:#f1dfe3!important;border-color:rgba(255,255,255,.14)}
