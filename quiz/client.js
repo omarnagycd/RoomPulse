@@ -25,12 +25,12 @@ Object.assign(EN,{"رفع Excel أو CSV":"Upload Excel or CSV","الملف هي
 });
 const Q={tok:null,view:'auth',lib:[],draft:null,draftId:null,launch:null,host:null,gs:null,off:0,pl:null,poll:null,sel:-1,report:null,sig:'',configured:null};
 try{Q.tok=localStorage.getItem('quiz.admin')}catch{}
-try{Q.host=JSON.parse(sessionStorage.getItem('quiz.host')||'null')}catch{}
+try{Q.host=JSON.parse(localStorage.getItem('quiz.host')||'null')}catch{}
 let qapi=(p,b,tk)=>api('/quiz'+p,b,tk);
 const qroot=()=>$(role==='quizPlay'?'quizPlayRoot':'quizRoot');
 const SYM=['▲','◆','●','■','★','✚'];
 function qsetTok(v){Q.tok=v;try{v?localStorage.setItem('quiz.admin',v):localStorage.removeItem('quiz.admin')}catch{}}
-function qhostSave(){try{Q.host?sessionStorage.setItem('quiz.host',JSON.stringify(Q.host)):sessionStorage.removeItem('quiz.host')}catch{}}
+function qhostSave(){try{Q.host?localStorage.setItem('quiz.host',JSON.stringify(Q.host)):localStorage.removeItem('quiz.host')}catch{}}
 function qstop(){clearInterval(Q.poll);Q.poll=null;clearInterval(Q.hb);Q.hb=null;Q.wsOff=true;if(Q.ws){try{Q.ws.close()}catch{}Q.ws=null}}
 function qerr(e){if(/الجلسة انتهت/.test(e.message)&&Q.tok&&role==='quiz'){qsetTok(null);Q.view='auth'}error(e);}
 const fmtp=n=>{n=Math.round((+n||0)*100)/100;return Number.isInteger(n)?String(n):n.toFixed(2).replace(/0$/,'')};
@@ -157,7 +157,7 @@ function editView(r){const d=Q.draft;
   if(d.questions.some(x=>!x.text.trim()))throw new Error(t('اكتب نص كل سؤال.'));if(d.questions.some(x=>x.options&&x.options.some(o=>!o.trim())))throw new Error(t('كمّل اختيارات كل سؤال.'));
   const res=await qapi('/library/save',{id:Q.draftId,quiz:d},Q.tok);await qreloadLib();$('globalError').textContent=''}catch(e){qerr(e)}}}
 /* ---------- launch ---------- */
-function launchView(r){const L=Q.launch;r.innerHTML='<span class="eyebrow">'+t('كويز')+'</span><h2 dir="auto">'+esc(L.title)+'</h2><div class="qglass"><div class="mode-buttons"><button class="secondary" id="qsolo" aria-pressed="'+(L.teams===0)+'">'+t('كل واحد لوحده')+'</button><button class="secondary" id="qteams" aria-pressed="'+(L.teams>0)+'">'+t('فرق')+'</button></div>'+(L.teams>0?'<label for="qn">'+t('عدد الفرق')+'</label><select id="qn" style="font:inherit;padding:10px;border-radius:8px">'+[2,3,4,5,6].map(n=>'<option '+(n===L.teams?'selected':'')+'>'+n+'</option>').join('')+'</select>':'')+'<label for="qcls">'+t('اسم الفصل أو المجموعة (مطلوب)')+'</label><input id="qcls" maxlength="60" value="'+esc(L.cls||'')+'" placeholder="'+t('مثال: دفعة 12')+'"><div class="qrow" style="gap:8px;margin:8px 0">'+qrecent().map(c=>'<button type="button" class="secondary qchip" data-c="'+esc(c)+'">'+esc(c)+'</button>').join('')+'</div><div class="actions"><button id="qgo">'+t('ابدأ اللوبي')+'</button><button class="secondary" id="qback">'+t('إلغاء')+'</button></div></div>';
+function launchView(r){const L=Q.launch;r.innerHTML='<span class="eyebrow">'+t('كويز')+'</span><h2 dir="auto">'+esc(L.title)+'</h2><div class="qglass"><div class="mode-buttons"><button class="secondary" id="qsolo" aria-pressed="'+(L.teams===0)+'">'+t('كل واحد لوحده')+'</button><button class="secondary" id="qteams" aria-pressed="'+(L.teams>0)+'">'+t('فرق')+'</button></div>'+(L.teams>0?'<label for="qn">'+t('عدد الفرق')+'</label><select id="qn" style="font:inherit;padding:10px;border-radius:8px">'+[2,3,4,5,6].map(n=>'<option '+(n===L.teams?'selected':'')+'>'+n+'</option>').join('')+'</select>':'')+'<label for="qcls">'+t('اسم الفصل أو المجموعة (مطلوب)')+'</label><input id="qcls" maxlength="60" value="'+esc(L.cls||'')+'" placeholder="'+t('مثال: باتش 12')+'"><div class="qrow" style="gap:8px;margin:8px 0">'+qrecent().map(c=>'<button type="button" class="secondary qchip" data-c="'+esc(c)+'">'+esc(c)+'</button>').join('')+'</div><div class="actions"><button id="qgo">'+t('ابدأ اللوبي')+'</button><button class="secondary" id="qback">'+t('إلغاء')+'</button></div></div>';
  $('qsolo').onclick=()=>{L.teams=0;launchView(r)};$('qteams').onclick=()=>{L.teams=L.teams||2;launchView(r)};if($('qn'))$('qn').onchange=e=>L.teams=+e.target.value;$('qback').onclick=()=>{Q.view='lib';qrender()};
  document.querySelectorAll('.qchip').forEach(b=>b.onclick=()=>{$('qcls').value=b.dataset.c});$('qcls').oninput=e=>L.cls=e.target.value;
  $('qgo').onclick=async()=>{try{const cls=$('qcls').value.trim();if(!cls){$('qcls').focus();throw new Error(t('اكتب اسم الفصل أو المجموعة.'))}qremember(cls);const d=await qapi('/game/create',{quizId:L.id,teams:L.teams,cls},Q.tok);Q.host={code:d.code,token:d.token,title:L.title};qhostSave();Q.view='host';Q.sig='';Q.gs=null;Q.report=null;startHostPoll()}catch(e){qerr(e)}}}
