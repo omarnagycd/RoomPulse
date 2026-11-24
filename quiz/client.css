@@ -105,3 +105,6 @@ header.hdr-s .topnav-with-language{padding-bottom:0!important;border-bottom:0!im
 @media(max-width:700px){header.hdr-s .section-tabs button[aria-pressed=true]{font-size:12px!important;padding:8px 10px!important}header.hdr-s .language-switch{padding:2px!important}header.hdr-s .language-switch button{padding:6px 10px!important}header.hdr-s #themeToggle,header.hdr-s .theme-toggle{padding:6px 10px!important}}
 @media(max-width:700px){header.hdr-s .section-tabs button[aria-pressed=true]{font-size:0!important;padding:8px 14px!important}header.hdr-s .section-tabs button[aria-pressed=true] svg,header.hdr-s .section-tabs button[aria-pressed=true] i{font-size:16px}}
 header .topnav-with-language{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important}
+
+/* header stays fixed (sticky) at full size: no shrinking */
+header,header.hdr-s{position:sticky!important;top:8px!important}
