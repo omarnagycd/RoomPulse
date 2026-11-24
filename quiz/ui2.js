@@ -2,10 +2,6 @@
 Object.assign(EN,{"اعمل كويز":"Create a quiz","ابدأ لعبة مباشرة":"Host a live game","ادخل بكود":"Join with a code","آخر الكويزات":"Recent quizzes","إحصائيات سريعة":"Quick stats","ألعاب اتعملت":"Games hosted","إجمالي المشاركين":"Total participants","متوسط اللاعبين في اللعبة":"Avg players per game","كويزات محفوظة":"Saved quizzes","اعمل كويز الأول":"Create a quiz first","اكتب اسم الكويز":"Write the quiz name","أضف سؤال واحد":"Add one question","في سؤال من غير نص":"A question has no text","في اختيار فاضي":"An option is empty"});
 /* avatar sprite */
 document.body.insertAdjacentHTML('beforeend','<svg width="0" height="0" style="position:absolute" aria-hidden="true">'+QAV_SYMBOLS+'</svg>');
-/* header: shrink on scroll. The page height never changes (margin keeps it), so no scroll feedback and no jitter. */
-{const h=document.querySelector('header');let s=false,tk=false;const sw=on=>{const b=h.offsetHeight;h.classList.toggle('hdr-s',on);const a=h.offsetHeight;h.style.marginBottom=on?(b-a)+'px':'';s=on};
-const f=()=>{tk=false;const y=window.scrollY||0;if(!s&&y>40)sw(true);else if(s&&y<6)sw(false)};
-addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFrame(f)}},{passive:true});addEventListener('resize',()=>{if(s){h.classList.remove('hdr-s');h.style.marginBottom='';s=false;f()}})}
 /* validation notice */
 {const M={'اكتب اسم الكويز.':'اكتب اسم الكويز','أضف سؤال واحد على الأقل.':'أضف سؤال واحد','اكتب نص كل سؤال.':'في سؤال من غير نص','كمّل اختيارات كل سؤال.':'في اختيار فاضي'};
 const _qe=qerr;qerr=function(e){if(role==='quiz'&&Q.view==='edit'&&e&&e.message){for(const k in M){if(e.message===t(k)){$('globalError').textContent='';qtoast(t(M[k]));return}}}_qe(e)}}
