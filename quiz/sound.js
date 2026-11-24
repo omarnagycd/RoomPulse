@@ -45,6 +45,25 @@ function cheer(c,d,t){const R=reverb(c,d);
 
 function kick2(c,d,t,v){tone(c,d,'sine',170,t,0.22,v,42);noise(c,d,t,0.02,v*0.3,'lowpass',3000)}
 function clap(c,d,t,v){for(let k=0;k<3;k++)noise(c,d,t+k*0.011,0.05,v,'bandpass',1500,1.2);noise(c,d,t+0.03,0.14,v*0.7,'bandpass',1400,0.9)}
+function mbar(c,d,V,k,t,R,E,lead){const b=60/V.bpm,bar=4*b;const ch=V.chords[k%4],root=V.roots[k%4],m=V.mel[k];
+  const intro=k===0;
+  // drums
+  for(let i=0;i<4;i++){if(V.kick==='four'||i%2===0)kick2(c,d,t+i*b,V.kv)}
+  if(V.snare){for(const i of [1,3]){snare(c,d,t+i*b,0.2);if(V.clap)clap(c,R,t+i*b,0.07)}}
+  for(let i=0;i<8;i++){noise(c,d,t+i*b/2,i%2?0.11:0.035,i%2?0.06:0.04,'highpass',8500)}
+  if(V.hat16)for(let i=0;i<16;i++)if(i%2)noise(c,d,t+i*b/4,0.03,0.025,'highpass',9500);
+  // bass
+  for(let i=0;i<8;i++){const o=V.bassPat[i];if(o===null)continue;voice(c,d,V.bassWave,F(root+o),t+i*b/2,b/2*0.8,V.bassVol,V.bassLP)}
+  // pad
+  if(V.pad)for(const n of ch)voice(c,R,'sawtooth',F(n),t,bar*0.98,V.pad,1400,[-10,10]);
+  // stabs
+  if(V.stabs)for(const off of V.stabs){for(const n of ch)voice(c,R,'sawtooth',F(n),t+off*b,b*0.4,0.03,2400,[-8,8])}
+  // arp
+  if(V.arp){const pat=V.arp;for(let i=0;i<16;i++){const n=ch[pat[i%pat.length]%ch.length]+12*Math.floor(pat[i%pat.length]/ch.length)+12;voice(c,E,V.arpWave,F(n),t+i*b/4,b/4*0.8,V.arpVol,V.arpLP)}}
+  // lead
+  for(let i=0;i<8;i++)if(m[i]){voice(c,lead,V.leadWave,F(m[i]),t+i*b/2,b*V.leadLen,V.leadVol,V.leadLP,[-7,7]);if(V.bell)voice(c,lead,'sine',F(m[i]+12),t+i*b/2,b*0.5,V.leadVol*0.4,5000)}
+}
+function msess(c,d){rv.delete(c);const R=reverb(c,d),E=echo(c,d);const lead=c.createGain();lead.gain.value=1;lead.connect(d);lead.connect(E);lead.connect(R);return {R,E,lead}}
 function music2(c,d,V){const b=60/V.bpm,bar=4*b,t0=0.05;const R=reverb(c,d),E=echo(c,d);
  const lead=c.createGain();lead.gain.value=1;lead.connect(d);lead.connect(E);lead.connect(R);
  for(let k=0;k<8;k++){const ch=V.chords[k%4],root=V.roots[k%4],t=t0+k*bar,m=V.mel[k];
@@ -66,4 +85,4 @@ function music2(c,d,V){const b=60/V.bpm,bar=4*b,t0=0.05;const R=reverb(c,d),E=ec
   for(let i=0;i<8;i++)if(m[i]){voice(c,lead,V.leadWave,F(m[i]),t+i*b/2,b*V.leadLen,V.leadVol,V.leadLP,[-7,7]);if(V.bell)voice(c,lead,'sine',F(m[i]+12),t+i*b/2,b*0.5,V.leadVol*0.4,5000)}
  }
  return 8*bar}
-return {music2,music,ting,buzz,cheer,CH}})();
+return {mbar,msess,music2,music,ting,buzz,cheer,CH}})();
