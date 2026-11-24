@@ -39,6 +39,7 @@ button.qa.picked{border-color:#fff;box-shadow:0 0 0 4px #252525}
 .qbadge{font-size:13px;color:var(--glass-muted,#6b5960)}
 @media(max-width:560px){.qa{font-size:17px;padding:16px}.qpod{height:200px}}
 .qhint{margin:6px 0 10px;padding:8px 14px;border-radius:14px;background:#ffffff99;border:1px solid #E6000033;color:#5a1e26;font-size:14px;text-align:start}
+#qmute[data-state=blocked]{animation:qpulse 1.6s ease-out infinite}@keyframes qpulse{0%{box-shadow:0 0 0 0 #e6000066}100%{box-shadow:0 0 0 16px #e6000000}}
 #qmute{position:fixed;bottom:16px;inset-inline-end:16px;z-index:50;width:46px;height:46px;min-height:46px;padding:0;border-radius:50%;font-size:20px;line-height:1}
 #qtoast{position:fixed;bottom:76px;inset-inline:16px;margin:auto;max-width:420px;z-index:60;display:flex;gap:8px;align-items:center;background:#fff;border:1px solid #E60000;border-radius:16px;padding:10px 14px;box-shadow:0 8px 24px #0003;color:#1c1c1c;font-size:14px}
 #qtoast span{flex:1}#qtoast button{min-height:34px;padding:2px 12px;font-size:13px}
@@ -126,3 +127,5 @@ header .section-tabs svg,header .section-tabs i{width:14px!important;height:14px
 .qlanding{margin-bottom:12px}.qlanding button{min-height:84px!important;font-size:19px!important}
 .qlanding{gap:8px!important;margin-bottom:10px}.qlanding button{min-height:48px!important;font-size:16px!important;border-radius:16px!important;transition:none!important}
 html[data-theme=dark] .qlanding button[aria-pressed=false]{background-color:rgba(255,255,255,.06)!important;color:#f1dfe3!important;border-color:rgba(255,255,255,.14)}
+
+#quiz,#quizPlay{padding-bottom:170px}
