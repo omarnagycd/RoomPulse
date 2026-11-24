@@ -52,5 +52,6 @@ h=h.replace('</style>','.qhero{background:#0b0405 url(data:image/jpeg;base64,'+H
 a='<section id="welcome">';assert a in h
 h=h.replace(a,a+'<div class="qhero qhero-act" role="img" aria-label="RoomPulse"></div>',1)
 h,_n=_re.subn(r'<p class="header-intro">.*?</p>','',h,count=1,flags=_re.S);assert _n==1
+import sys as _s;_s.path.insert(0,str(p/'quiz'));import contact as _c;h=_c.apply(h)
 (p/'index.html').write_text(h)
 print('built')
