@@ -1,4 +1,4 @@
-import asyncio,re,os
+import asyncio,sys;sys.path.insert(0,"quiz");import tt;tt.seed();import re,os
 from playwright.async_api import async_playwright,expect
 BASE=os.getenv('BASE','http://localhost:8799');OUT='/downloads/qm/shots4/';os.makedirs(OUT,exist_ok=True)
 async def main():
@@ -6,9 +6,9 @@ async def main():
   br=await p.chromium.launch(executable_path='/usr/bin/google-chrome',headless=True,args=['--no-sandbox','--autoplay-policy=no-user-gesture-required'])
   errs=[];ctx=await br.new_context(viewport={'width':1280,'height':900},accept_downloads=True)
   h=await ctx.new_page();h.on('pageerror',lambda e:errs.append(str(e)));h.on('dialog',lambda d:asyncio.ensure_future(d.accept()))
-  await h.add_init_script("window.__mus=0;const _s=AudioBufferSourceNode.prototype.start;AudioBufferSourceNode.prototype.start=function(){window.__mus++;return _s.apply(this,arguments)}")
+  await h.add_init_script("window.__mus=0;const _s=AudioBufferSourceNode.prototype.start;AudioBufferSourceNode.prototype.start=function(){window.__mus++;if(this.buffer&&this.buffer.duration>4)window.__app=(window.__app||0)+1;return _s.apply(this,arguments)}")
   await h.goto(BASE+'/?lang=ar');await h.locator('#quizTab').click()
-  await h.locator('#qpass').fill('omar1234');await h.locator('#qpass2').fill('omar1234');await h.locator('#qauth').click()
+  await h.locator('#qem').fill('t@x.com');await h.locator('#qpass').fill('secret12');await h.locator('#qauth').click()
   await expect(h.locator('#qnew')).to_be_visible();await expect(h.locator('.qhint')).to_be_visible();print('hint lib ok')
   # autosave
   await h.locator('#qnew').click();await h.locator('#qtitle').fill('كويز تجريبي');await h.locator('.qqcard [data-f=text]').first.fill('سؤال أول؟')
@@ -31,7 +31,7 @@ async def main():
   dl=await d.value;await dl.save_as('/tmp/rt.csv');await h.locator('#qfile').set_input_files('/tmp/rt.csv');await expect(h.locator('#qtitle')).to_have_value('كويز تجريبي');print('csv roundtrip ok')
   await h.locator('#qcancel').click()
   # sound + confetti
-  await h.locator('[data-a=run]').click();await h.locator('#qgo').click();await expect(h.locator('.qcode')).to_have_text(re.compile(r'\d{6}'),timeout=15000)
+  await h.locator('[data-a=run]').click();await h.locator('#qcls').fill('Class A');await h.locator('#qgo').click();await expect(h.locator('.qcode')).to_have_text(re.compile(r'\d{6}'),timeout=15000)
   await expect(h.locator('.qhint')).to_be_visible();await expect(h.locator('#qmute')).to_be_visible()
   code=await h.locator('.qcode').inner_text()
   ctx2=await br.new_context(viewport={'width':390,'height':800});pg=await ctx2.new_page();pg.on('pageerror',lambda e:errs.append(str(e)));await pg.goto(BASE+'/join?code='+code+'&lang=ar')
@@ -42,7 +42,7 @@ async def main():
   await h.locator('#qmute').click();m0=await h.evaluate('window.__mus');print('muted label',await h.locator('#qmute').inner_text())
   await h.locator('#qmute').click()
   await h.locator('#qrev').click() if await h.locator('#qrev').count() else None
-  await expect(h.locator('#qnext')).to_be_visible(timeout=15000);await h.locator('#qnext').click()
+  await expect(h.locator('#qnext')).to_be_visible(timeout=15000);await h.screenshot(path=OUT+'02b-host-reveal.png');m1=await h.evaluate('window.__mus');await h.locator('#qnext').click();await h.wait_for_timeout(2500);print('sources before end',m1,'after end',await h.evaluate('window.__mus'),'applause plays',await h.evaluate('window.__app'))
   await expect(h.locator('.qconf')).to_have_count(1,timeout=10000);print('confetti ok');await h.screenshot(path=OUT+'03-ended.png')
   await expect(pg.locator('.qconf')).to_have_count(1,timeout=10000);await pg.screenshot(path=OUT+'04-player-ended.png')
   print('JS errors',errs);await br.close()
