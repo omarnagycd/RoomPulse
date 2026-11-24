@@ -16,11 +16,11 @@ EN=["1. RoomPulse is a tool for interactive activities, quizzes and training. By
 "7. The owner may suspend or remove any account or content that breaks these terms, and may change the terms at any time. Continuing to use the site means you accept the current version.",
 "8. To contact the owner or ask for permission, use the Contact tab."]
 def apply(h):
-    m={"شروط الاستخدام":"Terms of Use","© RoomPulse · عمر محمد ناجي":"© RoomPulse · Omar Mohamed Nagy","إغلاق":"Close"}
+    m={"شروط الاستخدام":"Terms of Use","إغلاق":"Close"}
     for a,e in zip(AR,EN):m[a]=e
     paras=''.join('<p><span data-i18n="%s">%s</span></p>'%(a.replace('"','&quot;'),a) for a in AR)
     css='.rp-terms-link{background:none;border:0;padding:0;margin:0 6px;color:inherit;text-decoration:underline;font:inherit;cursor:pointer;min-height:0}#rpTerms{max-width:640px;margin:24px auto 0;padding:18px 20px;border:1px solid #eadede;border-radius:14px;background:#fff;font-size:14px;line-height:1.9;color:#252525}#rpTerms h3{margin:0 0 8px}#rpTerms p{margin:6px 0}html[data-theme=dark] #rpTerms{background:#261c1c;border-color:#4f3b3b;color:#f2eeee}'
-    foot='<footer class="rp-foot"><div id="rpTerms" class="hidden" role="region" aria-label="Terms"><h3 data-i18n="شروط الاستخدام">شروط الاستخدام</h3>'+paras+'<button type="button" class="secondary" id="rpTermsX"><span data-i18n="إغلاق">إغلاق</span></button></div><div style="margin-top:14px;text-align:center"><span data-i18n="© RoomPulse · عمر محمد ناجي">© RoomPulse · عمر محمد ناجي</span> · <button type="button" class="rp-terms-link" id="rpTermsB"><span data-i18n="شروط الاستخدام">شروط الاستخدام</span></button></div></footer>'
+    foot='<footer class="rp-foot"><div id="rpTerms" class="hidden" role="region" aria-label="Terms"><h3 data-i18n="شروط الاستخدام">شروط الاستخدام</h3>'+paras+'<button type="button" class="secondary" id="rpTermsX"><span data-i18n="إغلاق">إغلاق</span></button></div><div style="margin-top:14px;text-align:center"><span data-i18n="© RoomPulse">© RoomPulse</span> · <button type="button" class="rp-terms-link" id="rpTermsB"><span data-i18n="شروط الاستخدام">شروط الاستخدام</span></button></div></footer>'
     assert '</main><script>' in h
     h=h.replace('</main><script>','</main>'+foot+'<script>',1)
     h=h.replace('</style>',css+'</style>',1)
