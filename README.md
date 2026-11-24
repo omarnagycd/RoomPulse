@@ -141,3 +141,13 @@ Build: `python rebuild.py` regenerates worker.js from index.html and backend.js.
 20. Avatars: players pick one of 8 animal avatars (panda, dino, cat, fox, frog, penguin, rabbit, lion) on the name screen. Shown in the lobby, leaderboard, podium and player chip.
 21. Validation toast: a clear message that fades after 5 seconds when a quiz cannot be saved.
 22. Favicon and logo images (raster, so they are best at about 560 px wide or smaller).
+23. Live push (WebSockets via Durable Objects): the host and players get updates instantly instead of polling every 1.5 s. If the socket drops, the app falls back to polling every 3 s. Tested with 4 games of 200 players at once with no failures.
+24. Teams and accounts: unlimited Teams. Trainers sign in with email and password at the Quiz tab. Accounts are created only by the Admin (a 24 hour single-use invite link, or the Admin creating the email and password). All accounts in a Team share that Team's quizzes and History. Trainees join by code with no account. Passwords are hashed (PBKDF2). The old single passcode is retired and the existing quizzes and History moved to the Team "Omar Nagy Training Team".
+25. Admin page (footer link "Admin", opens #admin): its own email and password. Lists Teams, creates and renames Teams, makes invite links, creates accounts, resets passwords, suspends accounts or Teams, and opens a Team's quizzes and History read-only (with per-game detail and CSV). Each Team sees only its own History.
+26. Admin statistics (Admin sign-in only): people online now, players and trainers per Team, and a 14-day graph of people per day. Every /sys/ API call needs an Admin session.
+27. History: a Library | History tab strip in the Quiz area with search, a class filter, per-game CSV and an Excel export of everything (Games and Scores sheets).
+28. Required Class name: each quiz start asks for a class or group name (recent names as chips). Saved with the game and shown in History.
+29. Music is off by default; the trainer turns it on with a button.
+30. Header: no more jitter on scroll (shrinks without changing page height, scroll anchoring off) and a one-row compact header on phones.
+31. Dark mode: quieter and more premium, no glow on borders or text.
+32. Wheel redesign (option B "Red"): deep-red gradient segments, white names that always read upright, a dark rim with small dots, a white pointer and a glass hub. No glow.
