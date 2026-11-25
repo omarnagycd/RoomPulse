@@ -4,6 +4,7 @@
 - Avatar picker fix: pictures no longer overlap the buttons below them, so a tap selects the avatar that was touched.
 - Admin link always visible in the footer, "Keep me logged in" option, one-tap Spot questions, wheel fixes, team-delete confirm popup.
 - New user guide: `RoomPulse-Guide.pdf`.
+- Scoring: every correct answer = 1 point + up to 0.5 speed bonus (0.5 x remaining fraction of that question's timer). Wrong or no answer = 0. The per-question points setting is ignored and hidden.
 - `index.html` and `backend.js` are the parts of the deployed `worker.js` (worker.js = QR library + `const HTML=` index.html + backend.js).
 - Worker and database identifiers in `wrangler.jsonc` are setup placeholders. No credentials are included.
 

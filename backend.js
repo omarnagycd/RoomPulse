@@ -101,7 +101,7 @@ function qclean(q){
  });
  return {title,questions}
 }
-function qP(q){const p=q.points;return Number.isInteger(p)&&p>=1&&p<=100?p:1}
+function qP(q){return 1}
 async function qpush(db,code,now){
  const g=await db.prepare('SELECT * FROM quiz_games WHERE code=? AND expires>?').bind(code,now).first();if(!g)return null;
  const quiz=JSON.parse(g.quiz),total=quiz.questions.length,cur=g.state==='question'?quiz.questions[g.qi]:null,answering=!!cur&&now<g.q_end;
