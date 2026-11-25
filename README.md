@@ -1,3 +1,12 @@
+## Update 2026-11-25
+
+- Live quiz is individuals only (Teams option removed from the launch screen; the Random Groups tool stays).
+- Avatar picker fix: pictures no longer overlap the buttons below them, so a tap selects the avatar that was touched.
+- Admin link always visible in the footer, "Keep me logged in" option, one-tap Spot questions, wheel fixes, team-delete confirm popup.
+- New user guide: `RoomPulse-Guide.pdf`.
+- `index.html` and `backend.js` are the parts of the deployed `worker.js` (worker.js = QR library + `const HTML=` index.html + backend.js).
+- Worker and database identifiers in `wrangler.jsonc` are setup placeholders. No credentials are included.
+
 # RoomPulse on GitHub Pages
 
 This repository contains the Arabic/English RoomPulse app and its Cloudflare backend source.
